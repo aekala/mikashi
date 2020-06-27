@@ -1,0 +1,799 @@
+						<p id="songLyricsDiv"  class="songLyricsV14 iComment-text">Wicked or weakness<br />
+You gotta see this<br />
+Waaaaay (yeah, yeah!)<br />
+<br />
+Nobody pray for me<br />
+If you're not there for me<br />
+Waaaaay (yeah, yeah!)<br />
+<br />
+Ayy, I remember syrup sandwiches and crime allowances<br />
+Finesse a nigga with some counterfeits<br />
+But now I’m countin' this<br />
+Parmesan where my accountant lives<br />
+In fact, I'm downin’ this<br />
+D'USSÉ with my boo bae, tastes like Kool-Aid for the analysts<br />
+Girl, I can buy yo' ass the world with my paystub<br />
+Ooh, that pussy good, won't you sit it on my taste bloods?<br />
+I get way too petty once you let me do the extras<br />
+Pull up on your block, then break it down: we playin' Tetris<br />
+A.M. to the P.M., P.M. to the A.M., funk<br />
+Piss out your per diem, you just gotta hate 'em, funk<br />
+If I quit your BM, I still ride Mercedes, funk<br />
+If I quit this season, I still be the greatest, funk<br />
+My left stroke just went viral<br />
+Right stroke put lil' baby in a spiral<br />
+Soprano C, we like to keep it on a high note<br />
+It's levels to it, you and I know, bitch, be humble<br />
+<br />
+(Hol’ up, bitch) sit down<br />
+(Hol’ up lil' bitch, hol’ up lil' bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Sit down, hol' up, lil’ bitch)<br />
+Be humble (bitch)<br />
+(Hol' up, hol' up, hol' up, hol' up) bitch, sit down<br />
+Lil' bitch (hol' up, lil' bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up, hol' up, hol' up, hol' up) be humble<br />
+(Hol' up, hol' up, hol' up, hol' up, lil' bitch) sit down<br />
+(Hol' up lil' bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up, sit down, lil' bitch)<br />
+(Sit down, lil' bitch, be humble)<br />
+(Hol' up, hol' up, hol' up, hol' up, lil' bitch) bitch, sit down<br />
+(Hol' up, bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up, hol' up, hol' up, hol' up)<br />
+<br />
+Who dat nigga thinkin' that he frontin' on Man-Man? (Man-Man)<br />
+Get the fuck off my stage, I'm the Sandman (Sandman)<br />
+Get the fuck off my dick, that ain't right<br />
+I make a play fuckin' up your whole life<br />
+I'm so fuckin' sick and tired of the Photoshop<br />
+Show me somethin' natural like afro on Richard Pryor<br />
+Show me somethin' natural like ass with some stretch marks<br />
+Still will take you down right on your mama's couch in Polo socks, ayy<br />
+This shit way too crazy, ayy, you do not amaze me, ayy<br />
+I blew cool from AC, ayy, Obama just paged me, ayy<br />
+I don't fabricate it, ayy, most of y'all be fakin', ayy<br />
+I stay modest 'bout it, ayy, she elaborate it, ayy<br />
+This that Grey Poupon, that Evian, that TED Talk, ayy<br />
+Watch my soul speak, you let the meds talk, ayy<br />
+If I kill a nigga, it won't be the alcohol, ayy<br />
+I'm the realest nigga after all, bitch, be humble<br />
+<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up lil' bitch, hol' up lil' bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Sit down, hol' up, lil' bitch)<br />
+Be humble (bitch)<br />
+(Hol' up, hol' up, hol' up, hol' up) bitch, sit down<br />
+Lil' bitch (hol' up, lil' bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up, hol' up, hol' up, hol' up) be humble<br />
+(Hol' up, hol' up, hol' up, hol' up, lil' bitch) sit down<br />
+(Hol' up lil' bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up, sit down, lil' bitch)<br />
+(Sit down, lil' bitch) be humble<br />
+(Hol' up, hol' up, hol' up, hol' up, lil' bitch) bitch, sit down<br />
+(Hol' up, bitch) be humble<br />
+(Hol' up, bitch) sit down<br />
+(Hol' up, hol' up, hol' up, hol' up)<br /></p>
+					</div>
+                                        <div itemscope itemtype="http://schema.org/MusicRecording">
+                                        <meta itemprop="name" content="HUMBLE."/>
+                                        <meta itemprop="description" content=""/>
+                                            <div itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup"/>
+                                                  <meta itemprop="name" content ="Kendrick Lamar"/>
+                                                  <meta itemprop="url" content ="http://www.songlyrics.com/kendrick-lamar-lyrics/"/>
+                                            </div>
+                                            <div itemprop="inAlbum" itemscope itemtype="http://schema.org/MusicAlbum"/>
+                                                  <meta itemprop="name" content ="DAMN"/>
+                                                  <meta itemprop="url" content ="http://www.songlyrics.com/kendrick-lamar/damn/"/>
+                                            </div>
+                                        </div>
+					
+<script  type="text/javascript">
+
+$("#songLyricsDiv").iComment({
+	cannot_comment: "<span><br /><br />You must be <a href='/member-login.php'>logged in</a> to comment<br /></span> ",
+    id  : "1478640",
+    url : "http://www.songlyrics.com/ajax-post-icomment.php",
+	annot_url : "http://www.songlyrics.com/annot-$id",
+    min_words : 3,
+    min_words_error : "<br /><br /><p>Min 3 words are required for selection!</p>",
+	max_words : 75,
+    max_words_error : "<br /><br /><p>Max 30 words are allowed for selection!</p>",
+    max_comment_len : 300,
+	max_comment_len_label : "Remaining __REMAX__ | Minimum __MIN__",
+	min_comment_len : 50
+  });
+
+
+</script>
+
+					
+					<div class="ringtone-matcher">
+					</div>
+					 
+					<ul class="albuminfo">
+						<li>
+													</li>
+					</ul>
+
+<script>
+
+
+/* TFP - Songlyrics.com - Below Lyrics */
+(function() {
+    var opts = {
+        artist: "Kendrick Lamar",
+        song: "HUMBLE.",
+        adunit_id: 39382090,
+        div_id: "cf_async_" + Math.floor((Math.random() * 999999999))
+    };
+    document.write('<div id="'+opts.div_id+'"></div>');var c=function(){cf.showAsyncAd(opts)};if(typeof window.cf !== 'undefined')c();else{cf_async=!0;var r=document.createElement("script"),s=document.getElementsByTagName("script")[0];r.async=!0;r.src="//srv.clickfuse.com/showads/showad.js";r.readyState?r.onreadystatechange=function(){if("loaded"==r.readyState||"complete"==r.readyState)r.onreadystatechange=null,c()}:r.onload=c;s.parentNode.insertBefore(r,s)};
+})();
+</script>
+
+
+                    					    <div class="ringtone-matcher"><strong><a href="/news/lyrics-correction/" target="_blank">Submit lyrics correction &rarr;</a></strong></div>
+                    				</div> <!--end songLyricsContainer-->
+
+	</div>
+
+<div class="masthead-content lyrics-inner-ad-wrap">
+	<div id="ad-absolute-728-relocated" >
+				
+<!-- /1008608/GENERIC_728_ATF -->
+<!--div id='div-gpt-ad-1494449587349-2' style='height:90px; width:728px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1494449587349-2'); });
+</script>
+</div-->
+<script>
+/* Songlyrics 728x90 Hybrid */
+cf_page_artist = "Kendrick Lamar";
+cf_page_song = "HUMBLE.";
+cf_adunit_id = "100000081";
+</script>
+<script src="//srv.clickfuse.com/showads/showad.js"></script>
+
+			</div>
+
+<div id="fbbox-relocated">
+	<div id="fbbox-count">
+		<span id="fbbox-total">
+		55k
+		</span>
+	</div>
+	<a id="fbbox-likebutton" target="_blank" href="https://www.facebook.com/SongLyrics">Like</a>
+</div>
+</div>
+
+
+	<div id="ad-absolute-160">
+				
+<!-- /1008608/GENERIC_160_ATF -->
+<div id='div-gpt-ad-1494449587349-0' style='height:600px; width:160px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1494449587349-0'); });
+</script>
+</div>
+
+			</div>
+
+<div id="ros_5150" class='mobile_ad'></div>
+
+	<div class="col-one clear">
+
+			<div id="comments">
+
+				                <!-- missing
+/* Songlyrics 300x250 Hybrid */
+-->
+                
+
+                <h3>Add Comment</h3>
+
+					<div id="disqus_thread">
+
+													</div>
+
+						<script type="text/javascript" defer>
+						    
+						    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+						    var disqus_shortname = 'song-lyrics'; // required: replace example with your forum shortname
+							var disqus_developer = 1; // developer mode is off
+							var disqus_container_id = 'disqus_thread';
+
+							var disqus_config = function () {
+							var config = this; // Access to the config object
+								config.callbacks.preData.push(function() {
+									// clear out the container (its filled for SEO/legacy purposes)
+									document.getElementById(disqus_container_id).innerHTML = '';
+								});
+
+							};
+
+
+								/* * * DON'T EDIT BELOW THIS LINE * * */
+						    (function() {
+						        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+						        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						    })();
+
+						    
+						</script>
+
+			</div><!-- end comments -->
+
+<div id="ros_5150" class='mobile_ad'></div>
+
+</div> <!--end colone-->
+
+</div><!-- end colone-container -->
+
+<div class="colthree">
+
+		<div id="gracenote">
+				<div id="gracenote-credits">
+
+					
+				</div>
+		</div>
+		
+
+						<div class="adblock">
+
+<!-- /1008608/GENERIC_300_ATF -->
+<div id='div-gpt-ad-1494449587349-1'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1494449587349-1'); });
+</script>
+</div>
+
+</div>
+			
+					<div id="adblock-jango">
+<iframe width="300" scrolling="no" height="50" frameborder="0" vspace="0" hspace="0"  marginwidth="0" marginheight="0" style="border: 0px none; padding-left:0px" allowtransparency="true"
+src="https://jangomusicnetwork.cdn107.com/sl?cust_params=j_artist=Kendrick Lamar&j_title=HUMBLE."></iframe>
+			</div>
+
+		
+		
+								<div class="box listbox">
+
+						<h2>DAMN Tracklist</h2>
+
+							<table class="tracklist">
+								<tbody>
+																	<tr>
+										<td class="td-iter" width="21">1</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/blood-lyrics/"  title="Blood Lyrics Kendrick Lamar">Blood</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">2</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/dna-lyrics/"  title="DNA Lyrics Kendrick Lamar">DNA</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">3</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/duckworth-lyrics/"  title="Duckworth Lyrics Kendrick Lamar">Duckworth</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">4</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/element-lyrics/"  title="Element Lyrics Kendrick Lamar">Element</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">5</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/fear-lyrics/"  title="Fear Lyrics Kendrick Lamar">Fear</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">6</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/feel-lyrics/"  title="Feel Lyrics Kendrick Lamar">Feel</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">7</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/god-lyrics/"  title="God Lyrics Kendrick Lamar">God</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">8</td>
+										<td><a href="#" class="current" title="HUMBLE. Lyrics Kendrick Lamar">HUMBLE.</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">9</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/love-lyrics/"  title="Love Lyrics Kendrick Lamar">Love</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">10</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/loyalty-lyrics/"  title="Loyalty Lyrics Kendrick Lamar">Loyalty</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">11</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/lust-lyrics/"  title="Lust Lyrics Kendrick Lamar">Lust</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">12</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/pride-lyrics/"  title="Pride Lyrics Kendrick Lamar">Pride</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">13</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/xxx-lyrics/"  title="XXX Lyrics Kendrick Lamar">XXX</a></td>
+									</tr>
+																	<tr>
+										<td class="td-iter" width="21">14</td>
+										<td><a href="http://www.songlyrics.com/kendrick-lamar/yah-lyrics/"  title="Yah Lyrics Kendrick Lamar">Yah</a></td>
+									</tr>
+								
+								<tr>
+									<td class="td-item td-header aligncenter" colspan="2">
+										<a title="Kendrick Lamar Albums" href="http://www.songlyrics.com/kendrick-lamar-lyrics/">More Albums</a>
+									</td>
+								</tr>
+
+								</tbody>
+							</table>
+
+					</div><!-- end listbox -->
+
+
+					<a href="#embed-content-2" rel="superbox[content]" class="embed-button" style='display: block; float: none; top: -25px; position: relative;'>embed &lt;/&gt;</a>
+					<div id="embed-content-2" class="embed-content">
+
+							<div class="embed-text">Embed</div>
+							<div class="embed-get">
+									<p>Get the embed code</p>
+
+									<textarea name="widget_embed" class="widget_embed_box" rows="10" cols="34" onClick="select()"><table class="songlyrics" style="width: 100%; table-layout: fixed;"><col width="40" /><col /><tbody><tr><th colspan="2">Kendrick Lamar - DAMN Album Lyrics</th></tr><tr><td class="sl-td-left">1.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/blood-lyrics/" title="Blood Lyrics Kendrick Lamar">Blood</a></td></tr><tr><td class="sl-td-left">2.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/dna-lyrics/" title="DNA Lyrics Kendrick Lamar">DNA</a></td></tr><tr><td class="sl-td-left">3.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/duckworth-lyrics/" title="Duckworth Lyrics Kendrick Lamar">Duckworth</a></td></tr><tr><td class="sl-td-left">4.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/element-lyrics/" title="Element Lyrics Kendrick Lamar">Element</a></td></tr><tr><td class="sl-td-left">5.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/fear-lyrics/" title="Fear Lyrics Kendrick Lamar">Fear</a></td></tr><tr><td class="sl-td-left">6.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/feel-lyrics/" title="Feel Lyrics Kendrick Lamar">Feel</a></td></tr><tr><td class="sl-td-left">7.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/god-lyrics/" title="God Lyrics Kendrick Lamar">God</a></td></tr><tr><td class="sl-td-left">8.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/humble-lyrics/" title="HUMBLE. Lyrics Kendrick Lamar">HUMBLE.</a></td></tr><tr><td class="sl-td-left">9.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/love-lyrics/" title="Love Lyrics Kendrick Lamar">Love</a></td></tr><tr><td class="sl-td-left">10.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/loyalty-lyrics/" title="Loyalty Lyrics Kendrick Lamar">Loyalty</a></td></tr><tr><td class="sl-td-left">11.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/lust-lyrics/" title="Lust Lyrics Kendrick Lamar">Lust</a></td></tr><tr><td class="sl-td-left">12.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/pride-lyrics/" title="Pride Lyrics Kendrick Lamar">Pride</a></td></tr><tr><td class="sl-td-left">13.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/xxx-lyrics/" title="XXX Lyrics Kendrick Lamar">XXX</a></td></tr><tr><td class="sl-td-left">14.</td><td class="sl-td-right"><a href="http://www.songlyrics.com/kendrick-lamar/yah-lyrics/" title="Yah Lyrics Kendrick Lamar">Yah</a></td></tr></tbody></table><p class="sl-credit"><a href="http://www.songlyrics.com/kendrick-lamar-lyrics/" title="Kendrick Lamar Lyrics">Kendrick Lamar Lyrics</a> provided by <a href="/" title="Lyrics">SongLyrics.com</a></p></textarea>
+
+									<p class="desc"><strong>Note:</strong> When you embed the widget in your site, it will match your site's styles (CSS). This is just a preview!</p>
+
+							</div><!-- end embed-get -->
+
+							<div class="embed-preview">
+									<p>Preview the embedded widget</p>
+
+									<table class="songlyrics" style="width: 100%; table-layout: fixed;"><col width="40" /><col /><tbody><tr><th colspan="2">Kendrick Lamar - DAMN Album Lyrics</th></tr><tr><td class="sl-td-left">1.</td><td class="sl-td-right"><a href="#" title="Blood Lyrics Kendrick Lamar">Blood</a></td></tr><tr><td class="sl-td-left">2.</td><td class="sl-td-right"><a href="#" title="DNA Lyrics Kendrick Lamar">DNA</a></td></tr><tr><td class="sl-td-left">3.</td><td class="sl-td-right"><a href="#" title="Duckworth Lyrics Kendrick Lamar">Duckworth</a></td></tr><tr><td class="sl-td-left">4.</td><td class="sl-td-right"><a href="#" title="Element Lyrics Kendrick Lamar">Element</a></td></tr><tr><td class="sl-td-left">5.</td><td class="sl-td-right"><a href="#" title="Fear Lyrics Kendrick Lamar">Fear</a></td></tr><tr><td class="sl-td-left">6.</td><td class="sl-td-right"><a href="#" title="Feel Lyrics Kendrick Lamar">Feel</a></td></tr><tr><td class="sl-td-left">7.</td><td class="sl-td-right"><a href="#" title="God Lyrics Kendrick Lamar">God</a></td></tr><tr><td class="sl-td-left">8.</td><td class="sl-td-right"><a href="#" title="HUMBLE. Lyrics Kendrick Lamar">HUMBLE.</a></td></tr><tr><td class="sl-td-left">9.</td><td class="sl-td-right"><a href="#" title="Love Lyrics Kendrick Lamar">Love</a></td></tr><tr><td class="sl-td-left">10.</td><td class="sl-td-right"><a href="#" title="Loyalty Lyrics Kendrick Lamar">Loyalty</a></td></tr><tr><td class="sl-td-left">11.</td><td class="sl-td-right"><a href="#" title="Lust Lyrics Kendrick Lamar">Lust</a></td></tr><tr><td class="sl-td-left">12.</td><td class="sl-td-right"><a href="#" title="Pride Lyrics Kendrick Lamar">Pride</a></td></tr><tr><td class="sl-td-left">13.</td><td class="sl-td-right"><a href="#" title="XXX Lyrics Kendrick Lamar">XXX</a></td></tr><tr><td class="sl-td-left">14.</td><td class="sl-td-right"><a href="#" title="Yah Lyrics Kendrick Lamar">Yah</a></td></tr></tbody></table><p class="sl-credit"><a href="#" title="Kendrick Lamar Lyrics">Kendrick Lamar Lyrics</a> provided by <a href="#" title="Lyrics">SongLyrics.com</a></p>
+
+							</div><!-- end embed-preview -->
+					</div><!-- end embed-content -->
+
+			
+		
+		<div class="box listbox">
+			<h2 class="listbox-title">In the Know</h2>
+			<table class="tracklist">
+			<tbody>
+								    <tr>
+				      <td width="100" class="td-item td-noborder">
+					      					      	<a href="http://www.songlyrics.com/news/lyricapsule-the-surfaris-drop-wipe-out-june-22-1963-2/" title="Lyricapsule: The Surfaris Drop ‘Wipe Out’; June 22, 1963"><img height="100" width="100" alt="Lyricapsule: The Surfaris Drop ‘Wipe Out’; June 22, 1963" src="https://i2.wp.com/news.songlyricscom.netdna-cdn.com/2015/06/wipeoutFEAT.jpg?resize=150%2C150" class="tiny-img border-img"></a>
+					      				      </td>
+				      <td class="td-item td-last"><h3><a href="http://www.songlyrics.com/news/lyricapsule-the-surfaris-drop-wipe-out-june-22-1963-2/" title="Lyricapsule: The Surfaris Drop ‘Wipe Out’; June 22, 1963">Lyricapsule: The Surfaris Drop ‘Wipe Out’; June 22, 1963</a></h3></td>
+				      				    </tr>
+								    <tr>
+				      <td width="100" class="td-item td-noborder">
+					      					      	<a href="http://www.songlyrics.com/news/riffd-nas-nasir/" title="RIFF’d: Nas’ ‘Nasir’"><img height="100" width="100" alt="RIFF’d: Nas’ ‘Nasir’" src="https://i2.wp.com/news.songlyricscom.netdna-cdn.com/2018/06/nasnasir_FEAT.jpg?resize=150%2C150" class="tiny-img border-img"></a>
+					      				      </td>
+				      <td class="td-item td-last"><h3><a href="http://www.songlyrics.com/news/riffd-nas-nasir/" title="RIFF’d: Nas’ ‘Nasir’">RIFF’d: Nas’ ‘Nasir’</a></h3></td>
+				      				    </tr>
+								    <tr>
+				      <td width="100" class="td-item td-noborder">
+					      					      	<a href="http://www.songlyrics.com/news/lyricapsule-the-byrds-drop-mr-tambourine-man-june-21-1965/" title="Lyricapsule: The Byrds Drop ‘Mr. Tambourine Man’; June 21, 1965"><img height="100" width="100" alt="Lyricapsule: The Byrds Drop ‘Mr. Tambourine Man’; June 21, 1965" src="https://i1.wp.com/news.songlyricscom.netdna-cdn.com/2012/06/Byrds-MrTambourineMan.jpg?resize=150%2C150" class="tiny-img border-img"></a>
+					      				      </td>
+				      <td class="td-item td-last"><h3><a href="http://www.songlyrics.com/news/lyricapsule-the-byrds-drop-mr-tambourine-man-june-21-1965/" title="Lyricapsule: The Byrds Drop ‘Mr. Tambourine Man’; June 21, 1965">Lyricapsule: The Byrds Drop ‘Mr. Tambourine Man’; June 21, 1965</a></h3></td>
+				      				    </tr>
+								    <tr>
+				      <td width="100" class="td-item td-noborder">
+					      					      	<a href="http://www.songlyrics.com/news/lyricapsule-nirvana-drop-bleach-june-15-1989-2/" title="Lyricapsule: Nirvana Drop ‘Bleach’; June 15, 1989"><img height="100" width="100" alt="Lyricapsule: Nirvana Drop ‘Bleach’; June 15, 1989" src="https://i0.wp.com/news.songlyricscom.netdna-cdn.com/2012/06/nirvana_subpop_shot_9751.jpg?resize=150%2C150" class="tiny-img border-img"></a>
+					      				      </td>
+				      <td class="td-item td-last"><h3><a href="http://www.songlyrics.com/news/lyricapsule-nirvana-drop-bleach-june-15-1989-2/" title="Lyricapsule: Nirvana Drop ‘Bleach’; June 15, 1989">Lyricapsule: Nirvana Drop ‘Bleach’; June 15, 1989</a></h3></td>
+				      				    </tr>
+								    <tr>
+				      <td width="100" class="td-item td-noborder">
+					      					      	<a href="http://www.songlyrics.com/news/lyricapsule-derek-and-the-dominos-first-gig-june-14-1970/" title="Lyricapsule: Derek and the Dominos’ First Gig; June 14, 1970"><img height="100" width="100" alt="Lyricapsule: Derek and the Dominos’ First Gig; June 14, 1970" src="https://i1.wp.com/news.songlyricscom.netdna-cdn.com/2012/06/Derek+and+the+Dominos+Derek.jpg?resize=150%2C150" class="tiny-img border-img"></a>
+					      				      </td>
+				      <td class="td-item td-last"><h3><a href="http://www.songlyrics.com/news/lyricapsule-derek-and-the-dominos-first-gig-june-14-1970/" title="Lyricapsule: Derek and the Dominos’ First Gig; June 14, 1970">Lyricapsule: Derek and the Dominos’ First Gig; June 14, 1970</a></h3></td>
+				      				    </tr>
+							</tbody>
+			</table>
+			<span class="viewall"><a href="/news/" title="Music News">All Music News &raquo;</a></span>
+		</div>
+
+		
+		<div class="box listbox">
+			<h3 class="listbox-title">Popular Kendrick Lamar Lyrics</h3>
+			<table class="tracklist">
+				<tbody>
+															<tr>
+							<td class="td-iter" width="21">1</td>
+							<td><a href="http://www.songlyrics.com/kendrick-lamar/pp-feat-ab-soul-lyrics/">P&P feat. AB Soul</a></td>
+						</tr>
+																				<tr>
+							<td class="td-iter" width="21">2</td>
+							<td><a href="http://www.songlyrics.com/kendrick-lamar/black-panther-lyrics/">Black Panther</a></td>
+						</tr>
+																				<tr>
+							<td class="td-iter" width="21">3</td>
+							<td><a href="http://www.songlyrics.com/kendrick-lamar/humble-lyrics/">Humble</a></td>
+						</tr>
+																				<tr>
+							<td class="td-iter" width="21">4</td>
+							<td><a href="http://www.songlyrics.com/kendrick-lamar/next-to-me-remix-lyrics/">Next to Me - Remix</a></td>
+						</tr>
+																				<tr>
+							<td class="td-iter" width="21">5</td>
+							<td><a href="http://www.songlyrics.com/kendrick-lamar/who-shot-ya-freestyle-lyrics/">Who Shot Ya - Freestyle</a></td>
+						</tr>
+																				<tr>
+							<td class="td-iter" width="21">6</td>
+							<td><a href="http://www.songlyrics.com/kendrick-lamar/gangsta-party-freestyle-lyrics/">Gangsta Party - Freestyle</a></td>
+						</tr>
+																																																	</tbody>
+			</table>
+		</div>
+
+            
+				<!--
+/* Songlyrics 300x250 Hybrid */
+-->
+<div class="adblock">
+
+<!-- /1008608/LYRIC_300_ATF -->
+<div id='div-gpt-ad-1494449587349-3' style='height:250px; width:300px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1494449587349-3'); });
+</script>
+</div>
+
+</div>
+                
+			                    <div class="adblock">
+<!--
+/* Songlyrics 300x250 Hybrid */
+-->
+
+<!-- /1008608/LYRIC_160_ATF -->
+<div id='div-gpt-ad-1494449587349-4' style='height:600px; width:160px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1494449587349-4'); });
+</script>
+</div>
+
+        </div>
+
+                
+        
+</div> <!--end colthree-->
+
+</div> <!--end wrapper-inner-->
+
+		<div id="ad-728-footer">
+			<!-- missing
+/* Songlyrics 728x90 Hybrid */
+ -->
+							<!-- Leaderboard: 728x90 -->
+					</div>
+
+</div>
+
+<div class="footer">
+<table class="footer-inner">
+<tbody>
+
+<tr>
+
+	<td width="145" class="genres">
+		<h3>Genres</h3>
+		<ul>
+			<li><a href="/rock-lyrics.php" title="Rock Lyrics">Rock</a></li>
+			<li><a href="/r-and-b-lyrics.php" title="R&B Lyrics">R&amp;B</a></li>
+			<li><a href="/country-music-lyrics.php" title="Country Lyrics">Country</a></li>
+			<li><a href="/hip-hop-rap-lyrics.php" title="Hip Hop and Rap Lyrics">Hip Hop/Rap</a></li>
+			<li><a href="/pop-lyrics.php" title="Pop Lyrics">Pop</a></li>
+			<li><a href="/christian-lyrics.php" title="Christian Lyrics">Christian</a></li>
+		</ul>
+	</td>
+
+	<td width="170" class="top-lyrics">
+		<h3>Top Lyrics</h3>
+		<ul>
+			<li><a href="/top-songs-lyrics.html">Top Songs</a></li>
+			<li><a href="/top-artists-lyrics.html">Top Artists</a></li>
+			<li><a href="/top-albums-lyrics.html">Top Albums</a></li>
+			<li><a href="/top-upcoming-songs.html">Upcoming Songs</a></li>
+			<li><a href="/top-upcoming-albums.html">Upcoming Albums</a></li>
+			<li><a href="/top100.php" title="Billboard Hot 100 Songs">Billboard Hot 100</a></li>
+		</ul>
+	</td>
+
+	<td width="180" class="songlyrics">
+		<h3>SongLyrics</h3>
+		<ul>
+			<li><a href="/news/advertise/" title="Advertise on SongLyrics.com">Advertise on SL</a></li>
+			<li><a href="/news/featured-blogs/" title="Featured Blogs">Featured Blogs</a></li>
+			<li><a href="/news/contact-us/" title="Contact Us">Contact Us</a></li>
+			<li><a href="/news" title="Music News">Music News</a></li>
+			<li><a href="/privacy.php" title="Privacy Policy">Privacy Policy</a></li>
+			<li><a href="/termsconditions.php" title="Terms of Use">Terms of Use</a></li>
+		</ul>
+	</td>
+
+	<td width="210" class="td-footer-last">
+		<h3>Company</h3>
+		<ul>
+			<li class="ftlast-li">Copyright &copy; 2020 SongLyrics</li>
+			<li class="ftlast-li">
+				<ul>
+					<li class="ft-social">Follow us:</li>
+					<li class="ft-social"><a class="ft-fb" href="https://www.facebook.com/SongLyrics" target="_blank" title="SongLyrics on Facebook">Facebook</a></li>
+					<li class="ft-social"><a class="ft-tw" href="https://twitter.com/#!/songlyrics" target="_blank" title="Follow SongLyrics on Twitter">Twitter</a></li>
+				</ul>
+			</li>
+			<li class="ftlast-li">
+			<a href="/about.php">About</a>
+			</li>
+			<!--<li class="ftlast-li">Created in 0.096368 sec</li>-->
+			<li class="ftlast-li">
+				<ul>
+					<li class="ft-logo"><a class="ft-sm" href="http://www.soundmedia.com/" target="_blank" title="Advertise on SongLyrics">SoundMedia</a></li>
+				</ul>
+			</li>
+		</ul>
+	</td>
+
+</tr>
+
+</tbody>
+</table>
+
+<div id="footer-bottom">
+
+	<ul id="footer-artists">
+		<li class="artist"><h4>Artists:</h4></li>
+		<li><a href="/a/" title="A">A</a></li>
+		<li><a href="/b/" title="B">B</a></li>
+		<li><a href="/c/" title="C">C</a></li>
+		<li><a href="/d/" title="D">D</a></li>
+		<li><a href="/e/" title="E">E</a></li>
+		<li><a href="/f/" title="F">F</a></li>
+		<li><a href="/g/" title="G">G</a></li>
+		<li><a href="/h/" title="H">H</a></li>
+		<li><a href="/i/" title="I">I</a></li>
+		<li><a href="/j/" title="J">J</a></li>
+		<li><a href="/k/" title="K">K</a></li>
+		<li><a href="/l/" title="L">L</a></li>
+		<li><a href="/m/" title="M">M</a></li>
+		<li><a href="/n/" title="N">N</a></li>
+		<li><a href="/o/" title="O">O</a></li>
+		<li><a href="/p/" title="P">P</a></li>
+		<li><a href="/q/" title="Q">Q</a></li>
+		<li><a href="/r/" title="R">R</a></li>
+		<li><a href="/s/" title="S">S</a></li>
+		<li><a href="/t/" title="T">T</a></li>
+		<li><a href="/u/" title="U">U</a></li>
+		<li><a href="/v/" title="V">V</a></li>
+		<li><a href="/w/" title="W">W</a></li>
+		<li><a href="/x/" title="X">X</a></li>
+		<li><a href="/y/" title="Y">Y</a></li>
+		<li><a href="/z/" title="Z">Z</a></li>
+		<li><a href="/0/" title="#">#</a></li>
+	</ul>
+
+</div><!-- end footer-bottom -->
+
+</div><!-- end footer -->
+
+
+	<script type="text/javascript">
+	function rm_client_callback(flex_type) {
+	// If not a Flextitial duo, end here
+	if (flex_type != "duo")
+	return;
+
+	// Height and footer settings
+	var rm_header_height = 67; // px
+	var rm_footer_height = 200; // px
+
+	// Store so jquery only has to find them once
+	var rm_gutters = $("#rm_gutter_left, #rm_gutter_right");
+
+	// Set initial gutter position
+	rm_gutters.css("top", rm_header_height + "px");
+
+	// Attach to window's scroll event
+	$(window).scroll(function() {
+	st = $(this).scrollTop();
+	h = $(document).height() - $(window).height();
+
+	if (st < rm_header_height) {
+	rm_gutters.css({"top": rm_header_height + "px", "bottom": "auto"});
+	} else if (st < h - rm_footer_height) {
+	rm_gutters.css({"top": 0, "bottom": "auto"});
+	} else {
+	rm_gutters.css({"top": "auto", "bottom": rm_footer_height + "px"});
+	}
+	});
+	}
+	</script>
+
+	
+ <!-- BEGIN: Templates to be included in the HTML page -->
+
+<div id="iComment-templates">
+
+	<div class="iComment-popup" style="display: none">
+		<div class="iComment-popup-content">
+			Cheeeek<br /> that<br /> out<br /> dude.
+		</div>
+		<div class="iComment-close-btn"></div>
+	</div>
+
+	<div class="iComment-form-new">
+		<div class="iComment-selection-text"></div>
+		<div class="iComment-existing-comments-container">
+			<b class="iComment-title">Lead RIFFs:</b>
+			<div class="iComment-existing-comments"></div>
+		</div>
+		<div class="iComment-new-comment" style="display:none">
+			<label>
+				<b class="iComment-title">RIFF it:</b>
+				<textarea name="comment" class="comment-editor"></textarea>
+			</label>
+			<div class="iComment-buttons">
+				<button class="iComment-submit-btn" data-inline="true">Submit</button>
+				<button class="iComment-cancel-btn secondary" data-inline="true">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="iComment-warning iComment-warning-badselection">
+		<div class="iComment-title">Bad selection</div>
+		<div class="iComment-body">
+			<p>Cannot annotate a non-flat selection.  Make sure your selection
+				starts and ends within the same node.</p>
+				<div class="iComment-text iComment-warn" style="text-align: center">
+					(example of bad selection): <strong>This is <span class="iComment">bold
+					text</span></strong><span class="iComment"> and this</span> is normal text.
+				</div>
+				<div class="iComment-text" style="text-align: center">
+					(example of good selection): <strong>This is bold
+					text</strong> <span class="iComment">and this</span> is normal text.
+				</div>
+			</div>
+		</div>
+
+		<div class="iComment-warning iComment-warning-badselection2">
+			<div class="iComment-title">Bad selection</div>
+			<div class="iComment-body">
+				<p>An annotation cannot contain another annotation.</p>
+			</div>
+		</div>
+
+
+
+<!-- first comment
+	=================================================== -->
+
+	<div  data-template-id="iComment-existing-comment-first" class="iComment-existing-comment-first iComment-body iComment-main-comment">
+		<div class="body">
+
+
+			<div class="info">
+				<div class="author-name">Anonymous</div>
+				<span class="date"></span>
+				<span class="votes">
+					<span class="score"></span>
+				</span>
+			</div>
+
+
+			<div class="text"></div>
+
+
+			<div class="editor">
+				<textarea></textarea>
+				<div class="buttons">
+					<button class="iComment-save-btn" data-inline="true">Save</button>
+					<button class="iComment-discard-btn secondary" data-inline="true">Cancel</button>
+				</div>
+			</div>
+
+
+			<div class="delete">
+				<div class="center">
+					<strong>Really delete this comment?</strong>
+					<div class="buttons">
+						<button class="iComment-yes-btn" data-inline="true">Yes</button>
+						<button class="iComment-nope-btn secondary" data-inline="true">No</button>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="author">
+			<a class="author-url" href="#"><img class="author-avatar" src="images/avatar-default.png" /></a>
+		</div>
+
+
+		<div class="operations">
+			<span class="operation vote icon up-vote" title="Vote"></span>
+			<span class="operation icon edit" title="Edit"></span>
+			<span class="operation icon delete" title="Delete"></span>
+		</div>
+
+	</div>
+
+
+<!-- repetitive comment
+	=========================================================== -->
+
+	<div data-template-id="iComment-existing-comment" class="iComment-existing-comment iComment-body">
+
+
+		<div class="body">
+
+
+			<div class="info">
+				<div class="author-name">Anonymous</div>
+				<span class="date"></span>
+				<span class="votes">
+					<span class="score"></span>
+				</span>
+			</div>
+
+
+			<div class="text"></div>
+
+
+			<div class="editor">
+				<textarea></textarea>
+				<div class="buttons">
+					<button class="iComment-save-btn" data-inline="true">Save</button>
+					<button class="iComment-discard-btn secondary" data-inline="true">Cancel</button>
+				</div>
+			</div>
+
+
+			<div class="delete">
+				<div class="center">
+					<strong>Really delete this comment?</strong>
+					<div class="buttons">
+						<button class="iComment-yes-btn" data-inline="true">Yes</button>
+						<button class="iComment-nope-btn secondary" data-inline="true">No</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="author">
+			<a class="author-url" href="#"><img class="author-avatar" src="images/avatar-default.png" /></a>
+		</div>
+
+
+		<div class="operations">
+			<span class="operation vote icon up-vote" title="Up-vote"></span>
+			<span class="operation icon edit" title="Edit"></span>
+			<span class="operation icon delete" title="Delete"></span>
+		</div>
+
+	</div>
+
+</div>
+
+
+<!-- END: Templates to be included in the HTML page -->
+
+
+
+<script src="/js/dropdown.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$( '#nav li:has(ul)' ).doubleTapToGo(); <!-- DROPDOWN MENU -->
+</script>
+
+</body>
+</html>
