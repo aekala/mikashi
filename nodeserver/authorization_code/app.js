@@ -12,6 +12,7 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
+var cheerio = require('cheerio');
 
 var client_id = 'e3283192bc93401885ac047b7fd78f67'; // Your client id
 var client_secret = '894a88b3a402455ebca2e2d8bbe98da1'; // Your secret
@@ -102,6 +103,12 @@ request.post(authOptions, function(error, response, body) {
     request.get(options, function(error, response, body) {
       console.log(body);
     });
+
+    // request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
+    //   //console.log(body);
+    //   let lyrics = cheerio.load(body);
+    //   console.log(lyrics('#songLyricsDiv').text());
+    // })
 
     // we can also pass the token to the browser to make requests from there
     res.redirect('/#' +
