@@ -40,6 +40,7 @@
             <dt>Song: </dt><dd>{{item.name}}</dd>
             <dt>Artist: </dt><dd>{{item.artists.0.name}}</dd>
             <dt>Album: </dt><dd>{{item.album.name}}</dd>
+            <dt>Lyrics: </dt><dd>{{lyrics}}</dd>
           </dl>
         </div>
       </div>
@@ -72,7 +73,9 @@
 
         var access_token = params.access_token,
             refresh_token = params.refresh_token,
+            lyrics = params.lyrics,
             error = params.error;
+        
 
         if (error) {
           alert('There was an error during the authentication');
@@ -84,12 +87,14 @@
                   'Authorization': 'Bearer ' + access_token
                 },
                 success: function(response) {
-                  userProfilePlaceholder.innerHTML = userProfileTemplate(response); 
+                  response["lyrics"] = lyrics;
+                  console.log(response);
+                  userProfilePlaceholder.innerHTML = userProfileTemplate(response);                 
                   //console.log(response);
                 }
-            });   
-              $('#login').hide();
-              $('#loggedin').show();
+            });
+            $('#login').hide();
+            $('#loggedin').show();
           } else {
               // render initial screen
               $('#login').show();

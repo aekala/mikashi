@@ -18,6 +18,9 @@ var client_id = 'e3283192bc93401885ac047b7fd78f67'; // Your client id
 var client_secret = '894a88b3a402455ebca2e2d8bbe98da1'; // Your secret
 var redirect_uri = 'http://localhost:8080/callback' // Your redirect uri
 
+var songTitle;
+var lyrics;
+
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
@@ -101,21 +104,35 @@ request.post(authOptions, function(error, response, body) {
 
     // use the access token to access the Spotify Web API
     request.get(options, function(error, response, body) {
-      console.log(body);
+      //console.log(body);
+      songTitle = body.item.name;
+      request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
+        //console.log(body);
+        let $ = cheerio.load(body);
+        let lyrics = $('#songLyricsDiv').text();
+        res.redirect('/#' +
+          querystring.stringify({
+            access_token: access_token,
+            refresh_token: refresh_token,
+            lyrics: lyrics
+      }));
+        //console.log(lyrics('#songLyricsDiv').text());
+      })
     });
 
     // request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
     //   //console.log(body);
     //   let lyrics = cheerio.load(body);
-    //   console.log(lyrics('#songLyricsDiv').text());
+    //   //console.log(lyrics('#songLyricsDiv').text());
     // })
 
+    console.log(lyrics);
     // we can also pass the token to the browser to make requests from there
-    res.redirect('/#' +
-      querystring.stringify({
-        access_token: access_token,
-        refresh_token: refresh_token
-      }));
+    // res.redirect('/#' +
+    //   querystring.stringify({
+    //     access_token: access_token,
+    //     refresh_token: refresh_token,
+    //   }));
   } else {
     res.redirect('/#' +
       querystring.stringify({
