@@ -14,7 +14,7 @@
 	<meta property="og:title" content="Straight Outta Compton - NWA"/>
 	<meta property="og:type" content="song"/>
 	<meta property="og:url" content="http://www.songlyrics.com/nwa/straight-outta-compton-lyrics/"/>
-	<meta property="og:image" content="http://cdn2.songlyricscom.netdna-cdn.com/album_covers/152/nwa-straight-outta-compton/nwa-134537-straight-outta-compton.jpg"/>
+	<meta property="og:image" content="http://cdn1.songlyricscom.netdna-cdn.com/album_covers/152/nwa-straight-outta-compton/nwa-134537-straight-outta-compton.jpg"/>
 	<meta property="og:site_name" content="SongLyrics.com"/>
 	<link rel="preconnect" href="http://www.songlyrics.com" />
         <link rel="dns-prefetch" href="//cdn2.songlyricscom.netdna-cdn.com" />
@@ -873,7 +873,7 @@ src="https://jangomusicnetwork.cdn107.com/sl?cust_params=j_artist=NWA&j_title=St
 						</tr>
 																				<tr>
 							<td class="td-iter" width="21">6</td>
-							<td><a href="http://www.songlyrics.com/nwa/something-like-that-lyrics/">Something Like That</a></td>
+							<td><a href="http://www.songlyrics.com/nwa/express-yourself-lyrics/">Express Yourself</a></td>
 						</tr>
 																																								</tbody>
 			</table>
@@ -979,7 +979,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1494449587349-4');
 			<li class="ftlast-li">
 			<a href="/about.php">About</a>
 			</li>
-			<!--<li class="ftlast-li">Created in 0.109031 sec</li>-->
+			<!--<li class="ftlast-li">Created in 0.093853 sec</li>-->
 			<li class="ftlast-li">
 				<ul>
 					<li class="ft-logo"><a class="ft-sm" href="http://www.soundmedia.com/" target="_blank" title="Advertise on SongLyrics">SoundMedia</a></li>
