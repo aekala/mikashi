@@ -104,36 +104,24 @@ app.get('/callback', function(req, res) {
       // use the access token to access the Spotify Web API
       request.get(options, function(error, response, body) {
         console.log(body);
-        songTitle = body.item.name;
-        songArtist = body.item.artists[0];
+        console.log(body.item.artists[0]);
+        song_title = body.item.name;
+        artist = body.item.artists[0].name;
+        album = body.item.album.name;
         request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
-          //console.log(body);
           let $ = cheerio.load(body);
           let lyrics = $('#songLyricsDiv').html();
           res.redirect('/#' +
-            querystring.stringify({
-              access_token: access_token,
-              refresh_token: refresh_token,
-              songTitle,        
-              songArtist,
+            querystring.stringify({            
+              song_title,                  
+              artist,
+              album,
               lyrics,
+              access_token,
+              refresh_token,
         }));
         })
       });
-
-      // request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
-      //   //console.log(body);
-      //   let lyrics = cheerio.load(body);
-      //   //console.log(lyrics('#songLyricsDiv').text());
-      // })
-
-      //console.log(lyrics);
-      // we can also pass the token to the browser to make requests from there
-      // res.redirect('/#' +
-      //   querystring.stringify({
-      //     access_token: access_token,
-      //     refresh_token: refresh_token,
-      //   }));
     } else {
       res.redirect('/#' +
         querystring.stringify({
