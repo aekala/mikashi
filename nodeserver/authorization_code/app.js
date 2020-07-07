@@ -12,13 +12,13 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-var dotenv = require('dotenv')
+var dotenv = require('dotenv');
+var cheerio = require('cheerio');
 dotenv.config({path: '../.env'});
 
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
-console.log(client_id);
 
 /**
  * Generates a random string containing numbers and letters
@@ -49,7 +49,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  var scope = 'user-read-currently-playing';1
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -89,37 +89,59 @@ app.get('/callback', function(req, res) {
       json: true
     };
 
-    request.post(authOptions, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
+  request.post(authOptions, function(error, response, body) {
+    if (!error && response.statusCode === 200) {
 
-        var access_token = body.access_token,
-            refresh_token = body.refresh_token;
+      var access_token = body.access_token,
+          refresh_token = body.refresh_token;
 
-        var options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
+      var options = {
+        url: 'https://api.spotify.com/v1/me/player/currently-playing',
+        headers: { 'Authorization': 'Bearer ' + access_token },
+        json: true
+      };
 
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
+      // use the access token to access the Spotify Web API
+      request.get(options, function(error, response, body) {
+        console.log(body);
+        songTitle = body.item.name;
+        songArtist = body.item.artists[0];
+        request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
+          //console.log(body);
+          let $ = cheerio.load(body);
+          let lyrics = $('#songLyricsDiv').html();
+          res.redirect('/#' +
+            querystring.stringify({
+              access_token: access_token,
+              refresh_token: refresh_token,
+              songTitle,        
+              songArtist,
+              lyrics,
+        }));
+        })
+      });
 
-        // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
-          querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token
-          }));
-      } else {
-        res.redirect('/#' +
-          querystring.stringify({
-            error: 'invalid_token'
-          }));
-      }
-    });
-  }
+      // request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
+      //   //console.log(body);
+      //   let lyrics = cheerio.load(body);
+      //   //console.log(lyrics('#songLyricsDiv').text());
+      // })
+
+      //console.log(lyrics);
+      // we can also pass the token to the browser to make requests from there
+      // res.redirect('/#' +
+      //   querystring.stringify({
+      //     access_token: access_token,
+      //     refresh_token: refresh_token,
+      //   }));
+    } else {
+      res.redirect('/#' +
+        querystring.stringify({
+          error: 'invalid_token'
+        }));        
+    }
+  });
+}
 });
 
 app.get('/refresh_token', function(req, res) {
