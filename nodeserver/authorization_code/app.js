@@ -105,15 +105,17 @@ app.get('/callback', function(req, res) {
       request.get(options, function(error, response, body) {
         console.log(body);
         console.log(body.item.artists[0]);
-        song_title = body.item.name;
+        song = body.item.name;
         artist = body.item.artists[0].name;
-        album = body.item.album.name;
-        request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
+        album = body.item.album.name;        
+        artistParam = artist.toLowerCase();
+        songParam = song.toLowerCase();
+        request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
           let $ = cheerio.load(body);
           let lyrics = $('#songLyricsDiv').html();
           res.redirect('/#' +
             querystring.stringify({            
-              song_title,                  
+              song,                  
               artist,
               album,
               lyrics,

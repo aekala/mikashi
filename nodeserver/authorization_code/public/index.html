@@ -36,7 +36,7 @@
         </div>
         <div class="media-body">
           <dl class="dl-horizontal">
-            <dt>Song: </dt><dd>{{song_title}}</dd>   
+            <dt>Song: </dt><dd>{{song}}</dd>   
             <dt>Artist: </dt><dd>{{artist}}</dd>            
             <dt>Album: </dt><dd>{{album}}</dd>            
             <dt>Lyrics: </dt><dd>{{lyrics}}</dd>            
@@ -72,7 +72,7 @@
 
         var access_token = params.access_token,
             refresh_token = params.refresh_token,
-            song_title = params.song_title,
+            song = params.song,
             artist = params.artist,
             album = params.album,
             lyrics = params.lyrics,
@@ -91,7 +91,7 @@
                 },
                 success: function(response) {
                   userProfilePlaceholder.innerHTML = userProfileTemplate({
-                    song_title,
+                    song,
                     artist,
                     album,
                     lyrics
