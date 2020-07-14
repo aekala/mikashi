@@ -103,13 +103,13 @@ app.get('/callback', function(req, res) {
 
       // use the access token to access the Spotify Web API
       request.get(options, function(error, response, body) {
-        console.log(body);
-        console.log(body.item.artists[0]);
+        //console.log(body);
         song = body.item.name;
         artist = body.item.artists[0].name;
-        album = body.item.album.name;        
-        artistParam = artist.toLowerCase();
-        songParam = song.toLowerCase();
+        album = body.item.album.name;   
+        album_art = body.item.album.images[0].url;  
+        artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
+        songParam = song.toLowerCase().trim().split(' ').join('-');
         request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
           let $ = cheerio.load(body);
           let lyrics = $('#songLyricsDiv').html();
@@ -118,6 +118,7 @@ app.get('/callback', function(req, res) {
               song,                  
               artist,
               album,
+              album_art,
               lyrics,
               access_token,
               refresh_token,

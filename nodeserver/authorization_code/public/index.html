@@ -31,8 +31,8 @@
     <script id="user-profile-template" type="text/x-handlebars-template">
       <h1>Lyrics.io!</h1>
       <div class="media">
-        <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
+        <div>
+          <img class="media-object" width="300" src="{{album_art}}" />
         </div>
         <div class="media-body">
           <dl class="dl-horizontal">
@@ -75,7 +75,8 @@
             song = params.song,
             artist = params.artist,
             album = params.album,
-            lyrics = params.lyrics,
+            album_art = params.album_art,
+            lyrics = params.lyrics,          
             error = params.error;
 
         if (error) {
@@ -94,6 +95,7 @@
                     song,
                     artist,
                     album,
+                    album_art,
                     lyrics
                   });
 
