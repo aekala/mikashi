@@ -23,23 +23,22 @@
         <a href="/login" class="btn btn-primary">Log in with Spotify</a>
       </div>
       <div id="loggedin">
-        <div id="user-profile">
+        <h1>Lyrics.io!</h1>
+        <div class="media">
+          <div>
+            <img id="albumArt" class="media-object" width="300"/>
+          </div>
+          <div class="media-body">
+            <dl class="dl-horizontal">
+              <dt>Song: </dt><dd id="songText"></dd>   
+              <dt>Artist: </dt><dd id="artistText"></dd>            
+              <dt>Album: </dt><dd id="albumText"></dd>            
+              <dt>Lyrics: </dt><dd id="lyricsText"></dd>                
+            </dl>
+          </div>
+          <a href="/login" class="btn btn-primary">Update Song</a>
         </div>
-      </div>
-      <h1>Lyrics.io!</h1>
-      <div class="media">
-        <div>
-          <img id="albumArt" class="media-object" width="300"/>
-        </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <dt>Song: </dt><dd id="songText"></dd>   
-            <dt>Artist: </dt><dd id="artistText"></dd>            
-            <dt>Album: </dt><dd id="albumText"></dd>            
-            <dt>Lyrics: </dt><dd id="lyricsText"></dd>    
-          </dl>
-        </div>
-      </div>
+      </div>      
     </div>  
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>

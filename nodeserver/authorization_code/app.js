@@ -49,7 +49,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = 'user-read-currently-playing';1
+  var scope = 'user-read-currently-playing';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -61,7 +61,6 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/callback', function(req, res) {
-
   // your application requests refresh and access tokens
   // after checking the state parameter
 
@@ -101,9 +100,7 @@ app.get('/callback', function(req, res) {
         json: true
       };
 
-      // use the access token to access the Spotify Web API
       request.get(options, function(error, response, body) {
-        //console.log(body);
         song = body.item.name;
         artist = body.item.artists[0].name;
         album = body.item.album.name;   
@@ -123,7 +120,7 @@ app.get('/callback', function(req, res) {
               lyrics,
               access_token,
               refresh_token,
-        }));
+          }));
         })
       });
     } else {
