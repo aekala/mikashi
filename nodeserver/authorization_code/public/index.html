@@ -26,26 +26,22 @@
         <div id="user-profile">
         </div>
       </div>
-    </div>
-
-    <script id="user-profile-template" type="text/x-handlebars-template">
       <h1>Lyrics.io!</h1>
       <div class="media">
         <div>
-          <img class="media-object" width="300" src="{{album_art}}" />
+          <img id="albumArt" class="media-object" width="300"/>
         </div>
         <div class="media-body">
           <dl class="dl-horizontal">
-            <dt>Song: </dt><dd>{{song}}</dd>   
-            <dt>Artist: </dt><dd>{{artist}}</dd>            
-            <dt>Album: </dt><dd>{{album}}</dd>            
-            <dt>Lyrics: </dt><dd>{{lyrics}}</dd>            
+            <dt>Song: </dt><dd id="songText"></dd>   
+            <dt>Artist: </dt><dd id="artistText"></dd>            
+            <dt>Album: </dt><dd id="albumText"></dd>            
+            <dt>Lyrics: </dt><dd id="lyricsText"></dd>    
           </dl>
         </div>
       </div>
-    </script>    
+    </div>  
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
       (function() {
@@ -62,11 +58,7 @@
              hashParams[e[1]] = decodeURIComponent(e[2]);
           }
           return hashParams;
-        }
-
-        var userProfileSource = document.getElementById('user-profile-template').innerHTML,
-            userProfileTemplate = Handlebars.compile(userProfileSource),
-            userProfilePlaceholder = document.getElementById('user-profile');      
+        }       
 
         var params = getHashParams();
 
@@ -79,30 +71,22 @@
             lyrics = params.lyrics,          
             error = params.error;
 
+        const mediaData = [song, artist, album, lyrics];          
+        const mediaDataIDs = ['songText', 'artistText', 'albumText', 'lyricsText'];
+        for (let i = 0; i < mediaData.length; i++) {
+          if (mediaData[i]) {
+            document.getElementById(mediaDataIDs[i]).innerHTML = mediaData[i];
+          }
+        }    
+        document.getElementById("albumArt").setAttribute("src", album_art);
+
         if (error) {
           alert('There was an error during the authentication');
         } else {
           if (access_token) {
-            // render oauth info            
-
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me',
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                  userProfilePlaceholder.innerHTML = userProfileTemplate({
-                    song,
-                    artist,
-                    album,
-                    album_art,
-                    lyrics
-                  });
-
-                  $('#login').hide();
-                  $('#loggedin').show();
-                }
-            });
+            // render oauth info                  
+              $('#login').hide();
+              $('#loggedin').show();            
           } else {
               // render initial screen
               $('#login').show();

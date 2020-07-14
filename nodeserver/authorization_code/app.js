@@ -109,7 +109,8 @@ app.get('/callback', function(req, res) {
         album = body.item.album.name;   
         album_art = body.item.album.images[0].url;  
         artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
-        songParam = song.toLowerCase().trim().split(' ').join('-');
+        songParam = song.toLowerCase().trim().split(' ').join('-');     
+              
         request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
           let $ = cheerio.load(body);
           let lyrics = $('#songLyricsDiv').html();
