@@ -4,7 +4,7 @@
   "description": "Basic examples of the Spotify authorization flows through OAuth 2",
   "version": "0.0.2",
   "scripts": {
-    "dev": "nodemon ./app/app.js"
+    "dev": "nodemon ./app.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -13,6 +13,7 @@
     "dotenv": "^8.2.0",
     "express": "~4.16.0",
     "nodemon": "^2.0.4",
+    "pug": "^3.0.0",
     "querystring": "~0.2.0",
     "request": "~2.83.0"
   }

@@ -1,0 +1,22 @@
+doctype html
+html 
+  head
+    title Lyric.io
+  body
+    .container
+      h1 Lyric.io!
+      .media
+      img(
+        id="albumArt"
+        class="mediaObject"
+        width="300"
+        src=albumArtUrl
+      )
+      .media-body
+        .dl-horizontal
+          p Song: #{songName}
+          p Artist: #{artist}
+          p Album: #{albumName}    
+          p Lyrics: !{lyrics}                  
+
+

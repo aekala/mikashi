@@ -14,7 +14,7 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
-dotenv.config({path: '../.env'});
+dotenv.config({path: './.env'});
 
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
@@ -38,13 +38,12 @@ var generateRandomString = function(length) {
 var stateKey = 'spotify_auth_state';
 
 var app = express();
-
-// app.use(express.static(__dirname + '/public'))
-//    .use(cors())
-//    .use(cookieParser());
+app.use(cors())
+app.use(cookieParser());
+app.set('view engine', 'pug')
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/login.html');
+  res.render('login');
 })
 
 app.get('/login', function(req, res) {
@@ -105,26 +104,18 @@ app.get('/callback', function(req, res) {
       };
 
       request.get(options, function(error, response, body) {
-        song = body.item.name;
+        songName = body.item.name;
         artist = body.item.artists[0].name;
-        album = body.item.album.name;   
-        album_art = body.item.album.images[0].url;  
+        albumName = body.item.album.name;   
+        albumArtUrl = body.item.album.images[0].url;  
         artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
-        songParam = song.toLowerCase().trim().split(' ').join('-');     
+        songParam = songName.toLowerCase().trim().split(' ').join('-');     
               
         request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
           let $ = cheerio.load(body);
           let lyrics = $('#songLyricsDiv').html();
-          res.redirect('/#' +
-            querystring.stringify({            
-              song,                  
-              artist,
-              album,
-              album_art,
-              lyrics,
-              access_token,
-              refresh_token,
-          }));
+
+          res.render('song', {songName, artist, albumName, albumArtUrl, lyrics})
         })
       });
     } else {
