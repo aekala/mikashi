@@ -9,17 +9,26 @@ html
   body
     .container
       .row
-        .col
-          img(
-            src=albumArtUrl
-            id="albumArt"
-            class="img-fluid"
-            width="300"
+        .card(
+          class="mb-3"
+        )
+          .row(
+            class="no-gutters"
           )
+            .col-md-4
+              img(
+                src=albumArtUrl
+                id="albumArt"
+                class="img-fluid card-img"
+                width="300"
+              )
+            .col-md-8
+              .card-body
+                h5.card-title Song: #{songName}
+                p.card-text Artist: #{artist}
+                p.card-text Album: #{albumName}   
+      .row        
         .col
-          p Song: #{songName}
-          p Artist: #{artist}
-          p Album: #{albumName}    
           p Lyrics: !{lyrics}                  
 
 
