@@ -6,33 +6,36 @@ html
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     )
-    link(
-      rel="stylesheet"
-      href="../stylesheet.css"
-    )
+    style 
+      include ../css/stylesheet.css
   body
-    .container
-      .row
-        .card(
-          class="mb-3"
-        )
-          .row(
-            class="no-gutters"
+    .container-fluid
+      .row(
+        class="song-details-bg"
+      )
+        .col-12
+          .card(
+            class="song-details-bg"
           )
-            .col-md-4
-              img(
-                src=albumArtUrl
-                id="albumArt"
-                class="img-fluid card-img"
-                width="300"
-              )
-            .col-md-8
-              .card-body
-                h5.card-title(
-                  id="test"
-                ) Song: #{songName}
-                p.card-text Artist: #{artist}
-                p.card-text Album: #{albumName}   
+            .row(
+              class="no-gutters"
+            )
+              .col-3
+              .col-3
+                img(
+                  src=albumArtUrl
+                  id="albumArt"
+                  width="100%"
+                )
+              .col-6
+                .card-body(
+                  class="song-details-text"
+                )
+                  h5.card-title(
+                    class="song-details-text-song"
+                  ) #{songName}
+                  p.card-text #{artist}
+                  p.card-text Album: #{albumName}   
       .row        
         .col
           p Lyrics: !{lyrics}                  

@@ -1,0 +1,15 @@
+.song-details-bg {
+    background: black;
+}
+
+.song-details-text {
+    color: white;
+}
+
+.song-details-text-song {
+    color: lawngreen;
+}
+
+#albumArt {
+    float: right;
+}
