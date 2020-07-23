@@ -2,21 +2,39 @@ doctype html
 html 
   head
     title Lyric.io
+    link(
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    )
+    link(
+      rel="stylesheet"
+      href="../stylesheet.css"
+    )
   body
     .container
-      h1 Lyric.io!
-      .media
-      img(
-        id="albumArt"
-        class="mediaObject"
-        width="300"
-        src=albumArtUrl
-      )
-      .media-body
-        .dl-horizontal
-          p Song: #{songName}
-          p Artist: #{artist}
-          p Album: #{albumName}    
+      .row
+        .card(
+          class="mb-3"
+        )
+          .row(
+            class="no-gutters"
+          )
+            .col-md-4
+              img(
+                src=albumArtUrl
+                id="albumArt"
+                class="img-fluid card-img"
+                width="300"
+              )
+            .col-md-8
+              .card-body
+                h5.card-title(
+                  id="test"
+                ) Song: #{songName}
+                p.card-text Artist: #{artist}
+                p.card-text Album: #{albumName}   
+      .row        
+        .col
           p Lyrics: !{lyrics}                  
 
 
