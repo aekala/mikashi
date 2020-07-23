@@ -2,18 +2,21 @@ doctype html
 html 
   head
     title Lyric.io
+    link(
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    )
   body
     .container
-      h1 Lyric.io!
-      .media
-      img(
-        id="albumArt"
-        class="mediaObject"
-        width="300"
-        src=albumArtUrl
-      )
-      .media-body
-        .dl-horizontal
+      .row
+        .col
+          img(
+            src=albumArtUrl
+            id="albumArt"
+            class="img-fluid"
+            width="300"
+          )
+        .col
           p Song: #{songName}
           p Artist: #{artist}
           p Album: #{albumName}    
