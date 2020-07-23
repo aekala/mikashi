@@ -39,10 +39,13 @@ var generateRandomString = function(length) {
 var stateKey = 'spotify_auth_state';
 
 var app = express();
+app.use(cors())
+app.use(cookieParser());
+app.set('view engine', 'pug')
 
-app.use(express.static(__dirname + '/public'))
-   .use(cors())
-   .use(cookieParser());
+app.get('/', function(req, res) {
+  res.render('login');
+})
 
 app.get('/login', function(req, res) {
 
@@ -62,7 +65,6 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/callback', function(req, res) {
-
   // your application requests refresh and access tokens
   // after checking the state parameter
 
@@ -90,56 +92,40 @@ app.get('/callback', function(req, res) {
       json: true
     };
 
-request.post(authOptions, function(error, response, body) {
-  if (!error && response.statusCode === 200) {
+  request.post(authOptions, function(error, response, body) {
+    if (!error && response.statusCode === 200) {
 
-    var access_token = body.access_token,
-        refresh_token = body.refresh_token;
+      var access_token = body.access_token,
+          refresh_token = body.refresh_token;
 
-    var options = {
-      url: 'https://api.spotify.com/v1/me/player/currently-playing',
-      headers: { 'Authorization': 'Bearer ' + access_token },
-      json: true
-    };
+      var options = {
+        url: 'https://api.spotify.com/v1/me/player/currently-playing',
+        headers: { 'Authorization': 'Bearer ' + access_token },
+        json: true
+      };
 
-    // use the access token to access the Spotify Web API
-    request.get(options, function(error, response, body) {
-      //console.log(body);
-      songTitle = body.item.name;
-      request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
-        //console.log(body);
-        let $ = cheerio.load(body);
-        let lyrics = $('#songLyricsDiv').text();
-        res.redirect('/#' +
-          querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token,
-            lyrics: lyrics
-      }));
-        //console.log(lyrics('#songLyricsDiv').text());
-      })
-    });
+      request.get(options, function(error, response, body) {
+        songName = body.item.name;
+        artist = body.item.artists[0].name;
+        albumName = body.item.album.name;   
+        albumArtUrl = body.item.album.images[0].url;  
+        artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
+        songParam = songName.toLowerCase().trim().split(' ').join('-');     
+              
+        request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
+          let $ = cheerio.load(body);
+          let lyrics = $('#songLyricsDiv').html();
 
-    // request.get('http://www.songlyrics.com/kendrick-lamar/humble-lyrics/', function(error, response, body) {
-    //   //console.log(body);
-    //   let lyrics = cheerio.load(body);
-    //   //console.log(lyrics('#songLyricsDiv').text());
-    // })
-
-    console.log(lyrics);
-    // we can also pass the token to the browser to make requests from there
-    // res.redirect('/#' +
-    //   querystring.stringify({
-    //     access_token: access_token,
-    //     refresh_token: refresh_token,
-    //   }));
-  } else {
-    res.redirect('/#' +
-      querystring.stringify({
-        error: 'invalid_token'
-      }));
-  }
-});
+          res.render('song', {songName, artist, albumName, albumArtUrl, lyrics})
+        })
+      });
+    } else {
+      res.redirect('/#' +
+        querystring.stringify({
+          error: 'invalid_token'
+        }));        
+    }
+  });
 }
 });
 
