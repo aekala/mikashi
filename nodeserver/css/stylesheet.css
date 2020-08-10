@@ -1,4 +1,18 @@
+.song-details-top-bar {
+    padding: 2rem;
+    background-color: black;
+}
+
+.song-details-bottom-bar {
+    padding: 1rem;
+    background-color: black;
+}
+
 .song-details-bg {
+    background: black;
+}
+
+.song-details-card {
     background: black;
 }
 
@@ -11,5 +25,6 @@
 }
 
 #albumArt {
+    border: 1px solid white;
     float: right;
 }

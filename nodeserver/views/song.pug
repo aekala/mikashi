@@ -1,7 +1,7 @@
 doctype html
 html 
   head
-    title Lyric.io
+    title Lyrics.io
     link(
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -10,12 +10,16 @@ html
       include ../css/stylesheet.css
   body
     .container-fluid
+      .row
+        .col(
+          class="song-details-top-bar"
+        )
       .row(
         class="song-details-bg"
       )
         .col-12
           .card(
-            class="song-details-bg"
+            class="song-details-card"
           )
             .row(
               class="no-gutters"
@@ -25,7 +29,7 @@ html
                 img(
                   src=albumArtUrl
                   id="albumArt"
-                  width="100%"
+                  width="250rem"
                 )
               .col-6
                 .card-body(
@@ -36,6 +40,10 @@ html
                   ) #{songName}
                   p.card-text #{artist}
                   p.card-text Album: #{albumName}   
+      .row
+        .col(
+          class="song-details-bottom-bar"
+        )
       .row        
         .col
           p Lyrics: !{lyrics}                  
