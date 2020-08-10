@@ -24,6 +24,14 @@
     color: lawngreen;
 }
 
+.song-lyrics-div {
+    background-color: steelblue;
+}
+
+.song-lyrics-text p {
+    color: white;
+}
+
 #albumArt {
     border: 1px solid white;
     float: right;
