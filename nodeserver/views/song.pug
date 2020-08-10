@@ -24,14 +24,14 @@ html
             .row(
               class="no-gutters"
             )
-              .col-3
+              .col-2
               .col-3
                 img(
                   src=albumArtUrl
                   id="albumArt"
                   width="250rem"
                 )
-              .col-6
+              .col-7
                 .card-body(
                   class="song-details-text"
                 )
@@ -46,10 +46,17 @@ html
         )
       .row(
         class="song-lyrics-div justify-content-center"
-      )        
+      )
         .col-4(
-          class="song-lyrics-text"
-        ) 
-          p Lyrics: !{lyrics}                  
+          class="song-lyrics-sidebar"
+        )        
+        .col-4(
+          class="song-lyrics-content"
+        )
+          p.song-lyrics-header Lyrics  
+          p.song-lyrics-text !{lyrics}   
+        .col-4(
+          class="song-lyrics-sidebar"
+        )            
 
 

@@ -1,5 +1,5 @@
 .song-details-top-bar {
-    padding: 2rem;
+    padding: 1rem;
     background-color: black;
 }
 
@@ -22,14 +22,36 @@
 
 .song-details-text-song {
     color: lawngreen;
+    font-size: 2rem;
 }
 
 .song-lyrics-div {
-    background-color: steelblue;
+    background-color: white;
 }
 
-.song-lyrics-text p {
-    color: white;
+.song-lyrics-header {
+    color: #9A9A9A;
+    /* text-decoration: underline; */
+    display: inline-block;
+    border-bottom: 1px solid #9A9A9A;
+}
+
+.song-lyrics-text {
+    color: black;
+    font-size: 1rem;
+}
+
+.song-lyrics-header {
+    font: 4rem;
+}
+
+.song-lyrics-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.song-lyrics-sidebar {
+    background-color: #F7F8F3;
 }
 
 #albumArt {
