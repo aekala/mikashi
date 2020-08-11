@@ -1,0 +1,67 @@
+$primary-black: black;
+$primary-white: white;
+$primary-green: lawngreen;
+$primary-gray: #F7F8F3;
+$secondary-gray: #9A9A9A;
+
+.song-details-top-bar {
+    padding: 1rem;
+    background-color: $primary-black;
+}
+
+.song-details-bottom-bar {
+    padding: 1rem;
+    background-color: $primary-black;
+}
+
+.song-details-bg {
+    background: $primary-black;
+}
+
+.song-details-card {
+    background: $primary-black;
+}
+
+.song-details-text {
+    color: $primary-white;
+}
+
+.song-details-text-song {
+    color: $primary-green;
+    font-size: 2rem;
+}
+
+.song-lyrics-div {
+    background-color: $primary-white;
+    padding-top: 1rem;
+}
+
+.song-lyrics-header {
+    color: $secondary-gray;
+    /* text-decoration: underline; */
+    display: inline-block;
+    border-bottom: 1px solid $secondary-gray;
+}
+
+.song-lyrics-text {
+    color: $primary-black;
+    font-size: 1rem;
+}
+
+.song-lyrics-header {
+    font: 4rem;
+}
+
+.song-lyrics-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.song-lyrics-sidebar {
+    background-color: $primary-gray;
+}
+
+#albumArt {
+    border: 1px solid $primary-white;
+    float: right;
+}

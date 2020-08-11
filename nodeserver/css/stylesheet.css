@@ -1,60 +1,63 @@
 .song-details-top-bar {
-    padding: 1rem;
-    background-color: black;
+  padding: 1rem;
+  background-color: black;
 }
 
 .song-details-bottom-bar {
-    padding: 1rem;
-    background-color: black;
+  padding: 1rem;
+  background-color: black;
 }
 
 .song-details-bg {
-    background: black;
+  background: black;
 }
 
 .song-details-card {
-    background: black;
+  background: black;
 }
 
 .song-details-text {
-    color: white;
+  color: white;
 }
 
 .song-details-text-song {
-    color: lawngreen;
-    font-size: 2rem;
+  color: lawngreen;
+  font-size: 2rem;
 }
 
 .song-lyrics-div {
-    background-color: white;
+  background-color: white;
+  padding-top: 1rem;
 }
 
 .song-lyrics-header {
-    color: #9A9A9A;
-    /* text-decoration: underline; */
-    display: inline-block;
-    border-bottom: 1px solid #9A9A9A;
+  color: #9A9A9A;
+  /* text-decoration: underline; */
+  display: inline-block;
+  border-bottom: 1px solid #9A9A9A;
 }
 
 .song-lyrics-text {
-    color: black;
-    font-size: 1rem;
+  color: black;
+  font-size: 1rem;
 }
 
 .song-lyrics-header {
-    font: 4rem;
+  font: 4rem;
 }
 
 .song-lyrics-content {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .song-lyrics-sidebar {
-    background-color: #F7F8F3;
+  background-color: #F7F8F3;
 }
 
 #albumArt {
-    border: 1px solid white;
-    float: right;
+  border: 1px solid white;
+  float: right;
 }
+
+/*# sourceMappingURL=stylesheet.css.map */
