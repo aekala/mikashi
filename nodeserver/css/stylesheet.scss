@@ -33,12 +33,10 @@ $secondary-gray: #9A9A9A;
 
 .song-lyrics-div {
     background-color: $primary-white;
-    padding-top: 1rem;
 }
 
 .song-lyrics-header {
     color: $secondary-gray;
-    /* text-decoration: underline; */
     display: inline-block;
     border-bottom: 1px solid $secondary-gray;
 }
@@ -49,12 +47,12 @@ $secondary-gray: #9A9A9A;
 }
 
 .song-lyrics-header {
-    font: 4rem;
 }
 
 .song-lyrics-content {
     padding-left: 3rem;
     padding-right: 3rem;
+    padding-top: 1rem;
 }
 
 .song-lyrics-sidebar {
