@@ -1,24 +1,18 @@
-/**
- * This is an example of a basic node.js script that performs
- * the Authorization Code oAuth2 flow to authenticate against
- * the Spotify Accounts.
- *
- * For more information, read
- * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
- */
-
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
+var path = require('path');
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
-dotenv.config({path: './.env'});
+dotenv.config({path: '.env'});
 
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
+
+console.log("Client ID: " + client_id);
 
 /**
  * Generates a random string containing numbers and letters
@@ -41,6 +35,7 @@ var app = express();
 app.use(cors())
 app.use(cookieParser());
 app.set('view engine', 'pug')
+app.set('views', path.join(__dirname, '../views'))
 
 app.get('/', function(req, res) {
   res.render('login');
