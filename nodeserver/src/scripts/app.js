@@ -12,8 +12,6 @@ var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
 
-console.log("Client ID: " + client_id);
-
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string

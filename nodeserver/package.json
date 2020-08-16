@@ -4,7 +4,8 @@
   "description": "Basic examples of the Spotify authorization flows through OAuth 2",
   "version": "0.0.2",
   "scripts": {
-    "dev": "nodemon ./src/scripts/app.js"
+    "build": "sass ./src/css/stylesheet.scss ./src/css/stylesheet.css",
+    "dev": "npm run build && nodemon ./src/scripts/app.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -17,9 +18,5 @@
     "querystring": "~0.2.0",
     "request": "~2.83.0",
     "sass": "^1.26.10"
-  },
-  "devDependencies": {
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
   }
 }
