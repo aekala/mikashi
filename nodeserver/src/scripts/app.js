@@ -11,6 +11,8 @@ dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
+var access_token;
+var refresh_token;
 
 /**
  * Generates a random string containing numbers and letters
@@ -87,8 +89,8 @@ app.get('/callback', function(req, res) {
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
 
-      var access_token = body.access_token,
-          refresh_token = body.refresh_token;
+      access_token = body.access_token,
+      refresh_token = body.refresh_token;
 
       var options = {
         url: 'https://api.spotify.com/v1/me/player/currently-playing',
@@ -144,6 +146,30 @@ app.get('/refresh_token', function(req, res) {
     }
   });
 });
+
+app.get("/updateSong", function(req, res) {
+  var options = {
+    url: 'https://api.spotify.com/v1/me/player/currently-playing',
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+
+  request.get(options, function(error, response, body) {
+    songName = body.item.name;
+    artist = body.item.artists[0].name;
+    albumName = body.item.album.name;   
+    albumArtUrl = body.item.album.images[0].url;  
+    artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
+    songParam = songName.toLowerCase().trim().split(' ').join('-');     
+          
+    request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
+      let $ = cheerio.load(body);
+      let lyrics = $('#songLyricsDiv').html();
+
+      res.render('song', {songName, artist, albumName, albumArtUrl, lyrics})
+    })
+  });
+})
 
 console.log('Listening on 8080');
 app.listen(8080);
