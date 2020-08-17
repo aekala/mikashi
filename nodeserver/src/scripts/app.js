@@ -156,7 +156,7 @@ async function getCurrentlyPlayingSong(res) {
                         } else {
                           return response;   
                         }
-                    });
+                      });
   
   return songResponse;
 }
@@ -190,6 +190,10 @@ function getSongLyrics(songData, res) {
         lyrics
       }
       res.render('song', renderData);
+  }).catch(function(error) {
+    if (error.response.status == 404) {   // serve the songNotFound page if the url request returns a 404 error
+      res.render('songNotFound');
+    }
   });
 }
 
