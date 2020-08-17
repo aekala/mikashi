@@ -135,7 +135,9 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-app.get("/updateSong", function(req, res) {
+app.get("/updateSong", async function(req, res) {
+  var songResponse = await getCurrentlyPlayingSong(res);
+  getSongData(songResponse, res);
 }) 
 
 async function getCurrentlyPlayingSong(res) {  
