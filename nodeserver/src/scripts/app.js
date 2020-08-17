@@ -1,5 +1,5 @@
 var express = require('express'); // Express web server framework
-var request = require('request'); // "Request" library
+var request = require('axios');
 var path = require('path');
 var cors = require('cors');
 var querystring = require('querystring');
@@ -42,7 +42,6 @@ app.get('/', function(req, res) {
 })
 
 app.get('/login', function(req, res) {
-
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
@@ -74,35 +73,40 @@ app.get('/callback', function(req, res) {
   } else {
     res.clearCookie(stateKey);
     var authOptions = {
+      method: 'post',
       url: 'https://accounts.spotify.com/api/token',
-      form: {
+      params: {
         code: code,
         redirect_uri: redirect_uri,
         grant_type: 'authorization_code'
       },
       headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')),
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
       json: true
     };
 
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
+  request(authOptions)
+    .then(async function (response) {
+      if (response.status === 200) {
 
-      access_token = body.access_token,
-      refresh_token = body.refresh_token;
-      
-      var songResponse = getCurrentlyPlayingSong(res);
-      console.log(songResponse);
-      if (songResponse) {
-        getSongData(songResponse, res);
+        access_token = response.data.access_token,
+        refresh_token = response.data.refresh_token;
+        
+        var songResponse = await getCurrentlyPlayingSong(res);
+        if (songResponse) {
+          getSongData(songResponse, res);
+        }
+      } else {
+        res.redirect('/#' +
+          querystring.stringify({
+            error: 'invalid_token'
+          }));        
       }
-    } else {
-      res.redirect('/#' +
-        querystring.stringify({
-          error: 'invalid_token'
-        }));        
-    }
+  })
+  .catch(function (error) {
+    console.log(error);
   });
 }
 });
@@ -132,76 +136,58 @@ app.get('/refresh_token', function(req, res) {
 });
 
 app.get("/updateSong", function(req, res) {
-  var options = {
-    url: 'https://api.spotify.com/v1/me/player/currently-playing',
-    headers: { 'Authorization': 'Bearer ' + access_token },
-    json: true
-  };
-
-  request.get(options, function(error, response, body) {
-    songName = body.item.name;
-    artist = body.item.artists[0].name;
-    albumName = body.item.album.name;   
-    albumArtUrl = body.item.album.images[0].url;  
-    artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
-    songParam = songName.toLowerCase().trim().split(' ').join('-');     
-          
-    request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
-      let $ = cheerio.load(body);
-      let lyrics = $('#songLyricsDiv').html();
-
-      res.render('song', {songName, artist, albumName, albumArtUrl, lyrics})
-    })
-  });
 }) 
 
-function getCurrentlyPlayingSong(res) {   // ASYNC PROBLEM MAYBE?
+async function getCurrentlyPlayingSong(res) {  
   var options = {
+    method: 'get',
     url: 'https://api.spotify.com/v1/me/player/currently-playing',
     headers: { 'Authorization': 'Bearer ' + access_token },
     json: true
   };
 
-
-  request.get(options, function(error, response, body) {  
-    if (response.statusCode == 204) { // Spotify returns a 204 statusCode if there is no song currently playing
-      res.render('noSongPlaying');
-      songResponse = null;
-    } else {
-      songResponse = body;   
-      console.log(songResponse);
-    }
-  });
-
-  return null;
+  var songResponse = await request(options)
+                      .then(function(response) {  
+                        if (response.status == 204) { // Spotify returns a 204 status code if there is no song currently playing
+                          res.render('noSongPlaying');
+                          return null
+                        } else {
+                          return response;   
+                        }
+                    });
+  
+  return songResponse;
 }
 
-function getSongData(data, res) {
+function getSongData(songResponse, res) {
   const songData = {
-        songName: data.item.name,
-        artist: data.item.artists[0].name,
-        albumName: data.item.album.name, 
-        albumArtUrl: data.item.album.images[0].url,  
+        songName: songResponse.data.item.name,
+        artist: songResponse.data.item.artists[0].name,
+        albumName: songResponse.data.item.album.name, 
+        albumArtUrl: songResponse.data.item.album.images[0].url,  
   } 
-
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
   getSongLyrics(songData, res);
 }
 
 function getSongLyrics(songData, res) {
-  request.get('http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/', function(error, response, body) {
-    let $ = cheerio.load(body);
-    let lyrics = $('#songLyricsDiv').html();
-
-    renderData = {
-      songName: songData.songName,
-      artist: songData.artist,
-      albumName: songData.albumName,
-      albumArtUrl: songData.albumArtUrl,
-      lyrics
-    }
-    res.render('song', renderData);
+  var options = {
+    method: 'get',
+    url: 'http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/'
+  }
+  request(options)
+    .then(function(response) {
+      let $ = cheerio.load(response.data);
+      let lyrics = $('#songLyricsDiv').html();
+      renderData = {
+        songName: songData.songName,
+        artist: songData.artist,
+        albumName: songData.albumName,
+        albumArtUrl: songData.albumArtUrl,
+        lyrics
+      }
+      res.render('song', renderData);
   });
 }
 
