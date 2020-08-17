@@ -91,28 +91,12 @@ app.get('/callback', function(req, res) {
 
       access_token = body.access_token,
       refresh_token = body.refresh_token;
-
-      var options = {
-        url: 'https://api.spotify.com/v1/me/player/currently-playing',
-        headers: { 'Authorization': 'Bearer ' + access_token },
-        json: true
-      };
-
-      request.get(options, function(error, response, body) {
-        songName = body.item.name;
-        artist = body.item.artists[0].name;
-        albumName = body.item.album.name;   
-        albumArtUrl = body.item.album.images[0].url;  
-        artistParam = artist.toLowerCase().trim().split(' ').join('-'); 
-        songParam = songName.toLowerCase().trim().split(' ').join('-');     
-              
-        request.get('http://www.songlyrics.com/' + artistParam + '/' + songParam + '-lyrics/', function(error, response, body) {
-          let $ = cheerio.load(body);
-          let lyrics = $('#songLyricsDiv').html();
-
-          res.render('song', {songName, artist, albumName, albumArtUrl, lyrics})
-        })
-      });
+      
+      var songResponse = getCurrentlyPlayingSong(res);
+      console.log(songResponse);
+      if (songResponse) {
+        getSongData(songResponse, res);
+      }
     } else {
       res.redirect('/#' +
         querystring.stringify({
@@ -169,7 +153,57 @@ app.get("/updateSong", function(req, res) {
       res.render('song', {songName, artist, albumName, albumArtUrl, lyrics})
     })
   });
-})
+}) 
+
+function getCurrentlyPlayingSong(res) {   // ASYNC PROBLEM MAYBE?
+  var options = {
+    url: 'https://api.spotify.com/v1/me/player/currently-playing',
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+
+
+  request.get(options, function(error, response, body) {  
+    if (response.statusCode == 204) { // Spotify returns a 204 statusCode if there is no song currently playing
+      res.render('noSongPlaying');
+      songResponse = null;
+    } else {
+      songResponse = body;   
+      console.log(songResponse);
+    }
+  });
+
+  return null;
+}
+
+function getSongData(data, res) {
+  const songData = {
+        songName: data.item.name,
+        artist: data.item.artists[0].name,
+        albumName: data.item.album.name, 
+        albumArtUrl: data.item.album.images[0].url,  
+  } 
+
+  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
+  songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
+  getSongLyrics(songData, res);
+}
+
+function getSongLyrics(songData, res) {
+  request.get('http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/', function(error, response, body) {
+    let $ = cheerio.load(body);
+    let lyrics = $('#songLyricsDiv').html();
+
+    renderData = {
+      songName: songData.songName,
+      artist: songData.artist,
+      albumName: songData.albumName,
+      albumArtUrl: songData.albumArtUrl,
+      lyrics
+    }
+    res.render('song', renderData);
+  });
+}
 
 console.log('Listening on 8080');
 app.listen(8080);
