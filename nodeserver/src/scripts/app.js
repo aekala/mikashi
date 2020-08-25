@@ -170,32 +170,51 @@ function getSongData(songResponse, res) {
   } 
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
-  getSongLyrics(songData, res);
+  getSongLyrics(songData, 'SongLyrics', res);
 }
 
-function getSongLyrics(songData, res) {
+function getSongLyrics(songData, source, res) {
+  let lyricsURL;
+  switch(source) {
+    case 'SongLyrics':
+      lyricsURL = 'http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/';
+      break;
+    case 'AZLyrics':
+      lyricsURL = 'http://www.songlyrics.com/lyrics' + songData.artistParam + '/' + songData.songParam + '.html';
+      break;
+    
+  }
+
   var options = {
     method: 'get',
-    url: 'http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/'
+    url: lyricsURL
   }
   request(options)
     .then(function(response) {
       let $ = cheerio.load(response.data);
-      let lyrics = $('#songLyricsDiv').html();
-      renderData = {
-        songName: songData.songName,
-        artist: songData.artist,
-        albumName: songData.albumName,
-        albumArtUrl: songData.albumArtUrl,
-        lyrics
+      let renderData;
+      switch(source) {
+        case 'SongLyrics':
+          let lyrics = $('#songLyricsDiv').html();
+          renderData = {
+            songName: songData.songName,
+            artist: songData.artist,
+            albumName: songData.albumName,
+            albumArtUrl: songData.albumArtUrl,
+            lyrics
+          }
+          break;
       }
       res.render('song', renderData);
   }).catch(function(error) {
+    console.log(error);
     if (error.response.status == 404) {   // serve the songNotFound page if the url request returns a 404 error
       res.render('songNotFound');
     }
   });
 }
+
+
 
 console.log('Listening on 8080');
 app.listen(8080);
