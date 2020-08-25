@@ -6,6 +6,7 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
+var HTMLParser = require('node-html-parser');
 dotenv.config({path: '.env'});
 
 var client_id = process.env.CLIENT_ID;
@@ -204,8 +205,7 @@ function getSongLyrics(songData, source, res) {
           break;
         case 'Genius':
           var lyrics = $('.lyrics').html();
-          console.log(lyrics);
-          renderData.lyrics = lyrics        
+          renderData.lyrics = parseGeniusLyrics(lyrics)     
           break;
       }
       res.render('song', renderData);
@@ -215,6 +215,11 @@ function getSongLyrics(songData, source, res) {
       res.render('songNotFound');
     }
   });
+}
+
+function parseGeniusLyrics(lyrics) {  // need to ignore annotations and hyperlinks when getting lyrics from Genius 
+  let root = HTMLParser.parse(lyrics);
+  return root.text.trim().replace(/\n/g, "<br />");
 }
 
 console.log('Listening on 8080');
