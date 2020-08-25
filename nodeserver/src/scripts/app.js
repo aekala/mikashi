@@ -170,7 +170,7 @@ function getSongData(songResponse, res) {
   } 
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
-  getSongLyrics(songData, 'SongLyrics', res);
+  getSongLyrics(songData, 'Genius', res);
 }
 
 function getSongLyrics(songData, source, res) {
@@ -179,10 +179,9 @@ function getSongLyrics(songData, source, res) {
     case 'SongLyrics':
       lyricsURL = 'http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/';
       break;
-    case 'AZLyrics':
-      lyricsURL = 'http://www.songlyrics.com/lyrics' + songData.artistParam + '/' + songData.songParam + '.html';
+    case 'Genius':
+      lyricsURL = 'http://www.genius.com/' + songData.artistParam + '-' + songData.songParam + '-lyrics';
       break;
-    
   }
 
   var options = {
@@ -192,17 +191,21 @@ function getSongLyrics(songData, source, res) {
   request(options)
     .then(function(response) {
       let $ = cheerio.load(response.data);
-      let renderData;
+      let renderData = {
+        songName: songData.songName,
+        artist: songData.artist,
+        albumName: songData.albumName,
+        albumArtUrl: songData.albumArtUrl,
+      }
       switch(source) {
         case 'SongLyrics':
-          let lyrics = $('#songLyricsDiv').html();
-          renderData = {
-            songName: songData.songName,
-            artist: songData.artist,
-            albumName: songData.albumName,
-            albumArtUrl: songData.albumArtUrl,
-            lyrics
-          }
+          var lyrics = $('#songLyricsDiv').html();
+          renderData.lyrics = lyrics        
+          break;
+        case 'Genius':
+          var lyrics = $('.lyrics').html();
+          console.log(lyrics);
+          renderData.lyrics = lyrics        
           break;
       }
       res.render('song', renderData);
@@ -213,8 +216,6 @@ function getSongLyrics(songData, source, res) {
     }
   });
 }
-
-
 
 console.log('Listening on 8080');
 app.listen(8080);
