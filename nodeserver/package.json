@@ -5,7 +5,8 @@
   "version": "0.0.2",
   "scripts": {
     "build": "sass ./src/css/stylesheet.scss ./src/css/stylesheet.css",
-    "dev": "npm run build && nodemon ./src/scripts/app.js"
+    "dev": "npm run build && nodemon ./src/scripts/app.js",
+    "start": "node --inspect=0.0.0.0:9229 ./src/scripts/app.js"
   },
   "dependencies": {
     "axios": "^0.19.2",

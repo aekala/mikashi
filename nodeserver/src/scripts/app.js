@@ -15,6 +15,8 @@ var redirect_uri = process.env.REDIRECT_URI;
 var access_token;
 var refresh_token;
 
+const lyricSearchOrder = ["SongLyrics", "Genius"];
+
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
@@ -171,12 +173,12 @@ function getSongData(songResponse, res) {
   } 
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
-  getSongLyrics(songData, 'Genius', res);
+  getSongLyrics(songData, 0, res);
 }
 
-function getSongLyrics(songData, source, res) {
+function getSongLyrics(songData, index, res) {
   let lyricsURL;
-  switch(source) {
+  switch(lyricSearchOrder[index]) {
     case 'SongLyrics':
       lyricsURL = 'http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/';
       break;
@@ -198,7 +200,7 @@ function getSongLyrics(songData, source, res) {
         albumName: songData.albumName,
         albumArtUrl: songData.albumArtUrl,
       }
-      switch(source) {
+      switch(lyricSearchOrder[index]) {
         case 'SongLyrics':
           var lyrics = $('#songLyricsDiv').html();
           renderData.lyrics = lyrics        
@@ -208,11 +210,14 @@ function getSongLyrics(songData, source, res) {
           renderData.lyrics = parseGeniusLyrics(lyrics)     
           break;
       }
-      res.render('song', renderData);
+      console.log("Found on: " + lyricSearchOrder[index])
   }).catch(function(error) {
-    console.log(error);
     if (error.response.status == 404) {   // serve the songNotFound page if the url request returns a 404 error
-      res.render('songNotFound');
+      if (index == (lyricSearchOrder.length - 1)) {
+        res.render('songNotFound');
+      } else {
+        getSongLyrics(songData, ++index, res);
+      }
     }
   });
 }
