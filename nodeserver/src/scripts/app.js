@@ -210,7 +210,7 @@ function getSongLyrics(songData, index, res) {
           renderData.lyrics = parseGeniusLyrics(lyrics)     
           break;
       }
-      console.log("Found on: " + lyricSearchOrder[index])
+      res.render('song', renderData);
   }).catch(function(error) {
     if (error.response.status == 404) {   // serve the songNotFound page if the url request returns a 404 error
       if (index == (lyricSearchOrder.length - 1)) {
