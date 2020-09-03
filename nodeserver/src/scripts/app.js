@@ -39,9 +39,10 @@ app.use(cors())
 app.use(cookieParser());
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, '../views'))
+app.use(express.static(path.join(__dirname, '../')));
 
 app.get('/', function(req, res) {
-  res.render('login');
+  res.sendFile(path.join(__dirname, '../views/login.html'));
 })
 
 app.get('/login', function(req, res) {
