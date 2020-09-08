@@ -494,9 +494,19 @@
 		background-color: #8DCB89;
 	}
 
+	.contentBlackBG
+	{
+		background-color: black;
+	}
+
 	.pageMessageLG
 	{
 		margin-bottom: 0.5em;
+	}
+
+	.navbar-top 
+	{
+		padding-top: 1em;
 	}
 
 /*********************************************************************************/

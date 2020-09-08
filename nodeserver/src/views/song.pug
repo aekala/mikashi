@@ -6,9 +6,47 @@ html
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     )
+    link(
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/template.css"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/fonts.css"
+    )
     style 
       include ../css/stylesheet.css
-  body
+  body(
+    class="contentBlackBG"
+  )
+    header-wrapper
+      #header(
+        class="container navbar-top"
+      )  
+        #menu
+          ul
+            li(
+            )
+              a(
+                href="/"
+                title="Homepage"
+              ) Homepage
+            li(
+            )
+              a(
+                href="/search"
+                title="Search"
+              ) Search
+            li(
+            )
+              a(
+                href="/contact"
+                title="Contact Us"
+              ) Contact Us
     .container-fluid
       .row
         .col(
@@ -38,8 +76,12 @@ html
                   h5.card-title(
                     class="song-details-text-song"
                   ) #{songName}
-                  p.card-text #{artist}
-                  p.card-text Album: #{albumName}   
+                  p.card-text(
+                    class="song-details-text-artist"
+                  ) #{artist}
+                  p.card-text(
+                    class="song-details-text-album"
+                  ) Album: #{albumName}   
                   a.btn(
                     class="btn-primary"
                     type="button"

@@ -28,7 +28,15 @@ $secondary-gray: #9A9A9A;
 
 .song-details-text-song {
     color: $primary-green;
-    font-size: 2rem;
+    font-size: 3rem;
+}
+
+.song-details-text-artist {
+    font-size: 1rem;
+}
+
+.song-details-text-album {
+    font-size: 1rem;
 }
 
 .song-lyrics-div {
