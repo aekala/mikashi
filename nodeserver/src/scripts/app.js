@@ -144,6 +144,14 @@ app.get("/updateSong", async function(req, res) {
   getSongData(songResponse, res);
 }) 
 
+app.get("/search", function(req, res) {
+  res.sendFile(path.join(__dirname, '../views/search.html'));
+})
+
+app.get("/contact", function(req, res) {
+  res.sendFile(path.join(__dirname, '../views/contact.html'));
+})
+
 async function getCurrentlyPlayingSong(res) {  
   var options = {
     method: 'get',
@@ -155,7 +163,7 @@ async function getCurrentlyPlayingSong(res) {
   var songResponse = await request(options)
                       .then(function(response) {  
                         if (response.status == 204) { // Spotify returns a 204 status code if there is no song currently playing
-                          res.render('songNotFound');
+                          res.render('noSongPlaying');
                           return null
                         } else {
                           return response;   
