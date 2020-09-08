@@ -155,7 +155,7 @@ async function getCurrentlyPlayingSong(res) {
   var songResponse = await request(options)
                       .then(function(response) {  
                         if (response.status == 204) { // Spotify returns a 204 status code if there is no song currently playing
-                          res.render('noSongPlaying');
+                          res.render('songNotFound');
                           return null
                         } else {
                           return response;   
