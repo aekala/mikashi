@@ -56,8 +56,6 @@
 		margin: 0px auto;
 		width: 1200px;
 	}
-	
-
 /*********************************************************************************/
 /* Form Style                                                                    */
 /*********************************************************************************/
@@ -267,7 +265,7 @@
 		display: inline-block;
 		margin-top: 2em;
 		padding: 1em 2em 1em 2em;
-		background: #8DCB89;
+		background: #1DB954;
 		border-radius: 8px;
 		letter-spacing: 0.20em;
 		line-height: 1.8em;
@@ -306,7 +304,7 @@
 
 	.title
 	{
-		margin-bottom: 3em;
+		margin-bottom: 1em;
 	}
 	
 	.title h2
@@ -332,7 +330,7 @@
 	{
 		overflow: hidden;
 		padding: 2em 0em;
-		background: #8DCB89;
+		background: #28df99;
 	}
 
 	#header
@@ -351,7 +349,7 @@
 	
 	#logo h1
 	{
-		font-size: 3.5em;
+		font-size: 7em;
 	}
 	
 	#logo a
@@ -364,8 +362,8 @@
 	{
 		letter-spacing: 0.10em;
 		text-transform: uppercase;
-		font-size: 0.90em;
-		color: rgba(255,255,255,0.5);
+		font-size: 1em;
+		color: rgba(255,255,255,0.8);
 	}
 
 	#logo span a
@@ -413,7 +411,7 @@
 	
 	#menu .current_page_item a
 	{
-		background: #6FC06A;
+		background: #a8e6cf;
 		border-radius: 8px;
 		color: #FFF;
 	}
@@ -462,7 +460,7 @@
 	#welcome
 	{
 		overflow: hidden;
-		padding: 8em 0em;
+		padding: 5em 0em 12em 0em;
 		text-align: center;
 		color: rgba(255,255,255,0.3);
 	}
@@ -498,7 +496,7 @@
 
 	.contentGreenBG
 	{
-		background-color: #8DCB89;
+		background-color: #28df99;
 	}
 
 	.contentBlackBG
