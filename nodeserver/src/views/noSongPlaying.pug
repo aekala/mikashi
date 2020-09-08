@@ -6,13 +6,73 @@ html
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     ) 
-  body  
-    .container
-      #login  
-        h1 You are not currently playing a song on Spotify!   
-        a.btn(
-          class="btn-primary"
-          type="button"
-          href="/updateSong"
-        ) Try Again  
+    link(
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/template.css"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/fonts.css"
+    )
+  body(
+    class="contentGreenBG"
+  )
+    #header-wrapper
+      #header(
+        class="container"
+      )  
+        #menu
+          ul
+            li(
+              class="current_page_item"
+            )
+              a(
+                href="#"
+                accesskey="1"
+                title=""
+              ) Homepage
+            li(
+              class="current_page_item"
+            )
+              a(
+                href="#"
+                accesskey="2"
+                title=""
+              ) Search
+            li(
+              class="current_page_item"
+            )
+              a(
+                href="#"
+                accesskey="5"
+                title=""
+              ) Contact Us
+          #logo
+            h1(
+              class="pageMessageLG"
+            ) You are not currently playing a song on Spotify! 
+            a.btn(
+              class="btn-primary btn-lg"
+              type="button"
+              href="/updateSong"
+            ) Try Again  
+    #copyright(
+      class="footerContent container-fluid"
+    )
+      p &copy; Lyric.io All rights reserved. | Created by 
+        a(
+          href="https://www.linkedin.com/in/leo-kodish-b83aa712b/"
+          target="_blank"
+        ) Leo Kodish | 
+        span Design by 
+        a(
+         href="http://templated.co"
+          rel="nofollow"
+          target="_blank"
+        ) TEMPLATED
+</div>
 
