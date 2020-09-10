@@ -25,28 +25,35 @@ html
   )
     header-wrapper
       #header(
-        class="container navbar-top"
+        class="container-fluid navbar-top"
       )  
         #menu
           ul
-            li(
-            )
+            li
               a(
                 href="/"
                 title="Homepage"
               ) Homepage
-            li(
-            )
+            li
               a(
                 href="/search"
                 title="Search"
               ) Search
-            li(
-            )
+            li
               a(
                 href="/contact"
                 title="Contact Us"
               ) Contact Us
+            li.profile
+              img(
+                  src=userProfileImg
+                  class="image-circular"
+                  id="userProfileImg"
+                  width="250rem"
+                )
+              span(
+                style="color: white"
+              ) #{username}
     .container-fluid
       .row
         .col(
@@ -62,7 +69,7 @@ html
             .row(
               class="no-gutters"
             )
-              .col-2
+              .col-2                
               .col-3
                 img(
                   src=albumArtUrl

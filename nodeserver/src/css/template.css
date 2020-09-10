@@ -204,6 +204,19 @@
 		vertical-align: middle;
 	}
 
+	.profile
+	{
+		float: right;	
+	}
+
+	.image-circular {
+		width: 2rem;
+		height: 2rem;
+		position: relative;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+
 /*********************************************************************************/
 /* List Styles                                                                   */
 /*********************************************************************************/

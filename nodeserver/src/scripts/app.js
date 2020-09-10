@@ -14,6 +14,8 @@ var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
 var access_token;
 var refresh_token;
+var spotifyUsername; 
+var spotifyProfileImage;
 
 
 const lyricSearchOrder = ["SongLyrics", "Genius"];
@@ -102,6 +104,8 @@ app.get('/callback', function(req, res) {
         access_token = response.data.access_token,
         refresh_token = response.data.refresh_token;
         
+        await getUserProfile();
+        
         var songResponse = await getCurrentlyPlayingSong(res);
         if (songResponse) {
           getSongData(songResponse, res);
@@ -118,6 +122,25 @@ app.get('/callback', function(req, res) {
   });
 }
 });
+
+async function getUserProfile() {
+  var options = {
+    method: 'get',
+    url: 'https://api.spotify.com/v1/me/',
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+
+  await request(options)
+    .then(function(response) {  
+      if (response.status == 403) { // Spotify returns a 403 status code if you don't have authorization to access account
+        console.error("WEEEEEEOOOOOOO WEEEEEEEOOOOO"); 
+      } else {
+        spotifyUsername = response.data.id;
+        spotifyProfileImage = response.data.images[0].url;
+      }
+    });
+  }
 
 app.get('/refresh_token', function(req, res) {
 
@@ -221,6 +244,8 @@ function getSongLyrics(songData, index, source, res) {
       let renderData = {
         songName: songData.songName,
         artist: songData.artist,        
+        userProfileImg: spotifyProfileImage,
+        username: spotifyUsername
       }
       if (source == "Spotify") {
         renderData.albumName = songData.albumName;
