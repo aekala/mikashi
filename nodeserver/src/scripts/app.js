@@ -7,13 +7,15 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
 var HTMLParser = require('node-html-parser');
-dotenv.config({path: '.env'});
+var expressValidator = require('express-validator');
 
+dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
 var access_token;
 var refresh_token;
+
 
 const lyricSearchOrder = ["SongLyrics", "Genius"];
 
@@ -40,6 +42,9 @@ app.use(cookieParser());
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, '../views'))
 app.use(express.static(path.join(__dirname, '../')));
+app.use(express.urlencoded({
+  extended: true
+}))
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../views/login.html'));
@@ -148,6 +153,19 @@ app.get("/search", function(req, res) {
   res.sendFile(path.join(__dirname, '../views/search.html'));
 })
 
+app.post('/submit-song-search', function(req, res) {
+  const songName = req.body.song;
+  const artist = req.body.artist;
+  getSongDataSearch(songName, artist, res);
+})
+
+function getSongDataSearch(songName, artist, res) {
+  const songData = {songName, artist};
+  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
+  songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
+  getSongLyrics(songData, 0, "Search", res)
+}
+
 app.get("/contact", function(req, res) {
   res.sendFile(path.join(__dirname, '../views/contact.html'));
 })
@@ -182,10 +200,10 @@ function getSongData(songResponse, res) {
   } 
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
-  getSongLyrics(songData, 0, res);
+  getSongLyrics(songData, 0, "Spotify", res);
 }
 
-function getSongLyrics(songData, index, res) {
+function getSongLyrics(songData, index, source, res) {
   let lyricsURL;
   switch(lyricSearchOrder[index]) {
     case 'SongLyrics':
@@ -219,13 +237,21 @@ function getSongLyrics(songData, index, res) {
           renderData.lyrics = parseGeniusLyrics(lyrics)     
           break;
       }
-      res.render('song', renderData);
+      if (source == "Search") {
+        res.render('songSearchResult', renderData)
+      } else {
+        res.render('song', renderData);
+      }
   }).catch(function(error) {
     if (error.response.status == 404) {   // serve the songNotFound page if the url request returns a 404 error
       if (index == (lyricSearchOrder.length - 1)) {
-        res.render('songNotFound');
+        if (source == "Search") {
+          res.render('songNotFoundSearch')
+        } else {
+          res.render('songNotFound');
+        }
       } else {
-        getSongLyrics(songData, ++index, res);
+        getSongLyrics(songData, ++index, source, res);
       }
     }
   });

@@ -1,0 +1,100 @@
+doctype html
+html 
+  head
+    title Lyrics.io
+    link(
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    )
+    link(
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/template.css"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/fonts.css"
+    )
+    style 
+      include ../css/stylesheet.css
+  body(
+    class="contentBlackBG"
+  )
+    header-wrapper
+      #header(
+        class="container navbar-top"
+      )  
+        #menu
+          ul
+            li(
+            )
+              a(
+                href="/"
+                title="Homepage"
+              ) Homepage
+            li(
+            )
+              a(
+                href="/search"
+                title="Search"
+              ) Search
+            li(
+            )
+              a(
+                href="/contact"
+                title="Contact Us"
+              ) Contact Us
+    .container-fluid
+      .row
+        .col(
+          class="song-details-top-bar"
+        )
+      .row(
+        class="song-details-bg"
+      )
+        .col-12
+          .card(
+            class="song-details-card"
+          )
+            .row(
+              class="no-gutters"
+            )
+              .col-4              
+              .col-8
+                .card-body(
+                  class="song-details-text"
+                )
+                  h5.card-title(
+                    class="song-details-text-song"
+                  ) #{songName}
+                  p.card-text(
+                    class="song-details-text-artist"
+                  ) #{artist} 
+                  a.btn(
+                    class="btn-primary"
+                    type="button"
+                    href="/search"
+                  ) Find Another Song
+      .row
+        .col(
+          class="song-details-bottom-bar"
+        )
+      .row(
+        class="song-lyrics-div justify-content-center"
+      )
+        .col-4(
+          class="song-lyrics-sidebar"
+        )        
+        .col-4(
+          class="song-lyrics-content"
+        )
+          p.song-lyrics-header Lyrics  
+          p.song-lyrics-text !{lyrics}   
+        .col-4(
+          class="song-lyrics-sidebar"
+        )            
+
+

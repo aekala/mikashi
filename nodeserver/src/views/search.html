@@ -19,7 +19,16 @@
 				<li><a href="/contact" title="Contact Us">Contact Us</a></li>
 			</ul>
         </div>
-        <h1>Search</h1>
+		<h1>Search</h1>
+		<div id="searchForm">
+			<form method="POST" action="/submit-song-search">
+				<label for="song"> Song: </label>
+				<input type="text" name="song" />
+				<label for="artist"> Artist: </label>
+				<input type="text" name="artist" />
+				<input type="submit" />
+		  </form>
+		</div>
 </div>
 <div id="copyright" class="footerContent container-fluid">
 	<p>&copy; Lyric.io. All rights reserved. | Created by <a href="https://www.linkedin.com/in/leo-kodish-b83aa712b/" target="_blank">Leo Kodish</a> | Design by <a href="http://templated.co" rel="nofollow" target="_blank">TEMPLATED</a></p>
