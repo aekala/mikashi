@@ -206,7 +206,9 @@
 
 	.profile
 	{
-		float: right;	
+		text-align: center;
+		float: right;
+		position: relative;
 	}
 
 	.image-circular {
@@ -215,6 +217,7 @@
 		position: relative;
 		overflow: hidden;
 		border-radius: 50%;
+		vertical-align: middle;
 	}
 
 /*********************************************************************************/
@@ -401,7 +404,7 @@
 	
 	#menu li
 	{
-		display: inline-block;
+		display: inline-block;	
 	}
 	
 	#menu li a, #menu li span
@@ -525,6 +528,13 @@
 	.navbar-top 
 	{
 		padding-top: 1em;
+		margin-right:
+		text-align: center;
+	}
+
+	.spotify-username p {
+		color: white;
+		display: inline-block;
 	}
 
 /*********************************************************************************/

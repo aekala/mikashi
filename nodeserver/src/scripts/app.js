@@ -12,6 +12,7 @@ dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
+var isLoggedIn = false; // show profile pic and username depending on login status
 var access_token;
 var refresh_token;
 var spotifyUsername; 
@@ -48,7 +49,7 @@ app.use(express.urlencoded({
 }))
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/login.html'));
+  res.render('login', {isLoggedIn, spotifyUsername, spotifyProfileImage})
 })
 
 app.get('/login', function(req, res) {
@@ -100,7 +101,7 @@ app.get('/callback', function(req, res) {
   request(authOptions)
     .then(async function (response) {
       if (response.status === 200) {
-
+        isLoggedIn = true;
         access_token = response.data.access_token,
         refresh_token = response.data.refresh_token;
         

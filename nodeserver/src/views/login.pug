@@ -1,0 +1,118 @@
+doctype html
+html 
+    head
+        meta(
+            http-equiv="Content-Type" 
+            content="text/html; charset=utf-8"
+        )
+        title Lyrics.io
+        link(
+        rel="stylesheet"
+        href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+        )
+        link(
+        rel="stylesheet"
+        href="../css/template.css"
+        )
+        link(
+        rel="stylesheet"
+        href="../css/fonts.css"
+        )       
+    body
+        #header-wrapper
+            #header(
+                class="container-fluid navbar-top"
+            )
+                #menu
+                    ul
+                        li(
+                            class="current_page_item"
+                        )
+                            a(
+                                href="/"
+                                title="Homepage"
+                            ) Homepage
+                        li
+                            a(
+                                href="/search"
+                                title="Search"
+                            ) Search
+                        li
+                            a(
+                                href="/contact"
+                                title="Contact Us"
+                            ) Contact Us
+                        if(isLoggedIn)
+                            li.profile
+                                img(
+                                    src=spotifyProfileImage
+                                    class="image-circular"
+                                    id="userProfileImg"
+                                    width="250rem"
+                                    )
+                                span.spotify-username 
+                                    p #{spotifyUsername}
+                #logo   
+                    h1
+                        a(
+                            href="#"
+                        ) Lyric.io
+                    span Automated lyric search for Spotify
+        #wrapper1
+            #welcome(
+                class="container"
+            )
+                .title
+                    h2 Welcome to Lyric.io
+                    span(
+                        class="byline"
+                    ) A Better Way to Get Song Lyrics
+                .content
+                    p Log in to <strong>Lyric.io</strong> using <strong>Spotify</strong> to automatically find lyrics to the music you're listening to. No more wasting time looking up songs, let Lyric.io do the work for you! Lyric.io is powered by Node.js, utilizes the Spotify Web API, and currently searches for lyrics from <a href="http://www.songlyrics.com/" target="_blank">SongLyrics</a> and <a href="https://genius.com/" target="_blank">Genius
+                    p You can also use our song search feature to search for songs without having to log in to Spotify!  
+                    if(isLoggedIn)
+                        a.button(
+                            href="/login"
+                        ) Find Lyrics <img src="../assets/Spotify_Icon_CMYK_Black.png" class="img-thumbnail spotify-logo-png">
+                    else 
+                        a.button(
+                            href="/login"
+                        ) Log in with Spotify <img src="../assets/Spotify_Icon_CMYK_Black.png" class="img-thumbnail spotify-logo-png">
+        #wrapper4
+            #footer(
+                class="container"
+            )
+                header.title
+                    h2 Get in touch
+                    span(
+                        class="byline"
+                    ) Have Questions or Feedback?
+                ul.contact
+                    li
+                        a(
+                            href="https://www.linkedin.com/in/leo-kodish-b83aa712b/"
+                            class="icon icon-linkedin"
+                            target="_blank"
+                        ) 
+                            span Twitter
+                    li
+                        a(
+                            href="https://github.com/leokodish/lyric.io"
+                            class="icon icon-github"
+                            target="_blank"
+                        ) 
+                            span Github
+                    li
+                        a(
+                            href="mailto:lyric.io@gmail.com"
+                            class="icon icon-envelope"
+                            target="_blank"
+                        ) 
+                            span Email
+        #copyright
+            p &copy; Lyric.io. All rights reserved. | Created by <a href="https://www.linkedin.com/in/leo-kodish-b83aa712b/" target="_blank">Leo Kodish</a> | Design by <a href="http://templated.co" rel="nofollow" target="_blank">TEMPLATED
+    
+            
+                    
+                
+
