@@ -63,4 +63,16 @@
   float: right;
 }
 
+#searchSongLabel, #searchArtistLabel {
+  font-size: 2rem;
+}
+
+#searchSongInputField {
+  margin-bottom: 1rem;
+}
+
+#searchSubmitBtn {
+  margin-top: 1rem;
+}
+
 /*# sourceMappingURL=stylesheet.css.map */

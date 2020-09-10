@@ -71,3 +71,15 @@ $secondary-gray: #9A9A9A;
     border: 1px solid $primary-white;
     float: right;
 }
+
+#searchSongLabel, #searchArtistLabel {
+    font-size: 2rem;
+}
+
+#searchSongInputField {
+    margin-bottom: 1rem;
+}
+
+#searchSubmitBtn {
+    margin-top: 1rem;
+}
