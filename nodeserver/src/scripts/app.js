@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
 var HTMLParser = require('node-html-parser');
-var expressValidator = require('express-validator');
+var validator = require('express-validator');
 
 dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
@@ -154,6 +154,7 @@ app.get("/search", function(req, res) {
 })
 
 app.post('/submit-song-search', function(req, res) {
+
   const songName = req.body.song;
   const artist = req.body.artist;
   getSongDataSearch(songName, artist, res);
@@ -161,8 +162,8 @@ app.post('/submit-song-search', function(req, res) {
 
 function getSongDataSearch(songName, artist, res) {
   const songData = {songName, artist};
-  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-  songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
+  songData.artistParam = validate.escape(songData.artist.toLowerCase().trim().split(' ').join('-'));
+  songData.songParam = validate.escape(songData.songName.toLowerCase().trim().split(' ').join('-'));3
   getSongLyrics(songData, 0, "Search", res)
 }
 
@@ -223,9 +224,11 @@ function getSongLyrics(songData, index, source, res) {
       let $ = cheerio.load(response.data);
       let renderData = {
         songName: songData.songName,
-        artist: songData.artist,
-        albumName: songData.albumName,
-        albumArtUrl: songData.albumArtUrl,
+        artist: songData.artist,        
+      }
+      if (source == "Spotify") {
+        renderData.albumName = songData.albumName;
+        renderData.albumArtUrl = songData.albumArtUrl;
       }
       switch(lyricSearchOrder[index]) {
         case 'SongLyrics':
