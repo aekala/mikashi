@@ -246,15 +246,23 @@ function getSongLyrics(songData, index, source, res) {
         res.render('song', renderData);
       }
   }).catch(function(error) {
-    if (error.response.status == 404) {   // serve the songNotFound page if the url request returns a 404 error
-      if (index == (lyricSearchOrder.length - 1)) {
-        if (source == "Search") {
-          res.render('songNotFoundSearch')
+    try { 
+      if (error.response.status == 404) {  // serve the songNotFound page if the url request returns a 404 error
+        if (index == (lyricSearchOrder.length - 1)) {
+          if (source == "Search") {
+            res.render('songNotFoundSearch')
+          } else {
+            res.render('songNotFound');
+          }
         } else {
-          res.render('songNotFound');
+          getSongLyrics(songData, ++index, source, res);
         }
+      }
+    } catch(error) {  // if a different error is found, just serve the songNotFound page
+      if (source == "Search") {
+        res.render('songNotFoundSearch')
       } else {
-        getSongLyrics(songData, ++index, source, res);
+        res.render('songNotFound');
       }
     }
   });
