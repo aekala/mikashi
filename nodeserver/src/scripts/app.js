@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
 var HTMLParser = require('node-html-parser');
-var validator = require('express-validator');
 
 dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
@@ -153,19 +152,16 @@ app.get("/search", function(req, res) {
   res.sendFile(path.join(__dirname, '../views/search.html'));
 })
 
+//handle data sent from /search form
 app.post('/submit-song-search', function(req, res) {
-
-  const songName = req.body.song;
-  const artist = req.body.artist;
-  getSongDataSearch(songName, artist, res);
-})
-
-function getSongDataSearch(songName, artist, res) {
-  const songData = {songName, artist};
-  songData.artistParam = validate.escape(songData.artist.toLowerCase().trim().split(' ').join('-'));
-  songData.songParam = validate.escape(songData.songName.toLowerCase().trim().split(' ').join('-'));3
+  const songData = {
+    songName: req.body.song, 
+    artist: req.body.artist
+  };
+  songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
+  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   getSongLyrics(songData, 0, "Search", res)
-}
+})
 
 app.get("/contact", function(req, res) {
   res.sendFile(path.join(__dirname, '../views/contact.html'));
@@ -199,8 +195,8 @@ function getSongData(songResponse, res) {
         albumName: songResponse.data.item.album.name, 
         albumArtUrl: songResponse.data.item.album.images[0].url,  
   } 
-  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
+  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
   getSongLyrics(songData, 0, "Spotify", res);
 }
 
