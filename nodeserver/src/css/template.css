@@ -204,13 +204,6 @@
 		vertical-align: middle;
 	}
 
-	.profile
-	{
-		text-align: center;
-		float: right;
-		position: relative;
-	}
-
 	.image-circular {
 		width: 2rem;
 		height: 2rem;
@@ -367,6 +360,30 @@
 	{
 		font-size: 7em;
 	}
+
+	.titleText 
+	{
+		text-decoration: none;
+		color: #FFF;
+	}
+
+	.testMain
+	{
+		display: block;
+		position: relative; 
+		width: 100%;
+		text-align: center;
+	}
+
+	.centerNav {
+		display: inline-block;
+	}
+
+	.spotifyProfile {
+		right: 0;
+		position: absolute;
+		display: inline-block;
+	}
 	
 	#logo a
 	{
@@ -522,19 +539,31 @@
 
 	.pageMessageLG
 	{
-		margin-bottom: 0.5em;
+		font-size: 2.5rem;
+	}
+
+	.pageMessageSM
+	{
+		font-size: 1rem;
+	}
+
+	.updateBtn 
+	{
+		margin-top: 0.5rem;
 	}
 
 	.navbar-top 
 	{
 		padding-top: 1em;
-		margin-right:
 		text-align: center;
 	}
 
-	.spotify-username p {
+	.spotify-username p 
+	{
 		color: white;
 		display: inline-block;
+		font-size: 1rem;
+		padding: 0 1rem 0 0.5rem;
 	}
 
 /*********************************************************************************/

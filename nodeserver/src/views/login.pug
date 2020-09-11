@@ -8,6 +8,10 @@ html
         title Lyrics.io
         link(
         rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        )
+        link(
+        rel="stylesheet"
         href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
         )
         link(
@@ -24,26 +28,28 @@ html
                 class="container-fluid navbar-top"
             )
                 #menu
-                    ul
-                        li(
-                            class="current_page_item"
-                        )
-                            a(
-                                href="/"
-                                title="Homepage"
-                            ) Homepage
-                        li
-                            a(
-                                href="/search"
-                                title="Search"
-                            ) Search
-                        li
-                            a(
-                                href="/contact"
-                                title="Contact Us"
-                            ) Contact Us
+                    .navBar
+                        .centerNav
+                            ul
+                                li(
+                                    class="current_page_item"
+                                )
+                                    a(
+                                        href="/"
+                                        title="Homepage"
+                                    ) Homepage
+                                li
+                                    a(
+                                        href="/search"
+                                        title="Search"
+                                    ) Search
+                                li
+                                    a(
+                                        href="/contact"
+                                        title="Contact Us"
+                                    ) Contact Us
                         if(isLoggedIn)
-                            li.profile
+                            .spotifyProfile
                                 img(
                                     src=spotifyProfileImage
                                     class="image-circular"
@@ -52,12 +58,9 @@ html
                                     )
                                 span.spotify-username 
                                     p #{spotifyUsername}
-                #logo   
-                    h1
-                        a(
-                            href="#"
-                        ) Lyric.io
-                    span Automated lyric search for Spotify
+            #logo   
+                h1.titleText Lyric.io
+                span Automated lyric search for Spotify
         #wrapper1
             #welcome(
                 class="container"
@@ -68,7 +71,7 @@ html
                         class="byline"
                     ) A Better Way to Get Song Lyrics
                 .content
-                    p Log in to <strong>Lyric.io</strong> using <strong>Spotify</strong> to automatically find lyrics to the music you're listening to. No more wasting time looking up songs, let Lyric.io do the work for you! Lyric.io is powered by Node.js, utilizes the Spotify Web API, and currently searches for lyrics from <a href="http://www.songlyrics.com/" target="_blank">SongLyrics</a> and <a href="https://genius.com/" target="_blank">Genius
+                    p Log in to <strong>Lyric.io</strong> using <strong>Spotify</strong> to automatically find lyrics to the music you're listening to. No more wasting time looking up songs, let Lyric.io do the work for you! Lyric.io is powered by Node.js, utilizes the Spotify Web API, and currently searches for lyrics from <a href="http://www.songlyrics.com/" target="_blank">SongLyrics</a> and <a href="https://genius.com/" target="_blank">Genius</a>
                     p You can also use our song search feature to search for songs without having to log in to Spotify!  
                     if(isLoggedIn)
                         a.button(

@@ -27,31 +27,33 @@ html
       class="container-fluid navbar-top"
     )  
       #menu
-        ul
-          li
-            a(
-              href="/"
-              title="Homepage"
-            ) Homepage
-          li
-            a(
-              href="/search"
-              title="Search"
-            ) Search
-          li
-            a(
-              href="/contact"
-              title="Contact Us"
-            ) Contact Us
-          li.profile
-            img(
-                src=userProfileImg
-                class="image-circular"
-                id="userProfileImg"
-                width="250rem"
-              )
-            span.spotify-username 
-              p #{username}
+        .navBar
+            .centerNav
+                ul
+                    li                    
+                        a(
+                            href="/"
+                            title="Homepage"
+                        ) Homepage
+                    li
+                        a(
+                            href="/search"
+                            title="Search"
+                        ) Search
+                    li
+                        a(
+                            href="/contact"
+                            title="Contact Us"
+                        ) Contact Us
+            .spotifyProfile
+                img(
+                    src=userProfileImg
+                    class="image-circular"
+                    id="userProfileImg"
+                    width="250rem"
+                    )
+                span.spotify-username 
+                    p #{username}
 
     .container-fluid
       .row

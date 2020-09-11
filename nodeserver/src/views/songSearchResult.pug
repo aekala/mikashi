@@ -25,28 +25,39 @@ html
   )
     header-wrapper
       #header(
-        class="container navbar-top"
+        class="container-fluid navbar-top"
       )  
         #menu
-          ul
-            li(
-            )
-              a(
-                href="/"
-                title="Homepage"
-              ) Homepage
-            li(
-            )
-              a(
-                href="/search"
-                title="Search"
-              ) Search
-            li(
-            )
-              a(
-                href="/contact"
-                title="Contact Us"
-              ) Contact Us
+          .navBar
+              .centerNav
+                  ul
+                      li                      
+                          a(
+                              href="/"
+                              title="Homepage"
+                          ) Homepage
+                      li(
+                          class="current_page_item"
+                      )
+                          a(
+                              href="/search"
+                              title="Search"
+                          ) Search
+                      li
+                          a(
+                              href="/contact"
+                              title="Contact Us"
+                          ) Contact Us
+              if(isLoggedIn)
+                  .spotifyProfile
+                      img(
+                          src=userProfileImg
+                          class="image-circular"
+                          id="userProfileImg"
+                          width="250rem"
+                          )
+                      span.spotify-username 
+                          p #{username}
     .container-fluid
       .row
         .col(

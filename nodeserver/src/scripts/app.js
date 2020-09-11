@@ -202,7 +202,7 @@ async function getCurrentlyPlayingSong(res) {
   var songResponse = await request(options)
                       .then(function(response) {  
                         if (response.status == 204) { // Spotify returns a 204 status code if there is no song currently playing
-                          res.render('noSongPlaying');
+                          res.render('noSongPlaying', {isLoggedIn, spotifyProfileImage, spotifyUsername});
                           return null
                         } else {
                           return response;   
@@ -263,6 +263,7 @@ function getSongLyrics(songData, index, source, res) {
           break;
       }
       if (source == "Search") {
+        renderData.isLoggedIn = isLoggedIn;
         res.render('songSearchResult', renderData)
       } else {
         res.render('song', renderData);
@@ -272,9 +273,9 @@ function getSongLyrics(songData, index, source, res) {
       if (error.response.status == 404) {  // serve the songNotFound page if the url request returns a 404 error
         if (index == (lyricSearchOrder.length - 1)) {
           if (source == "Search") {
-            res.render('songNotFoundSearch')
+            res.render('songNotFoundSearch', {isLoggedIn, spotifyProfileImage, spotifyUsername})
           } else {
-            res.render('songNotFound');
+            res.render('songNotFound', {isLoggedIn, spotifyProfileImage, spotifyUsername});
           }
         } else {
           getSongLyrics(songData, ++index, source, res);
