@@ -1,0 +1,107 @@
+doctype html
+html 
+  head
+    title Lyrics.io
+    link(
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    )
+    link(
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/template.css"
+    )
+    link(
+      rel="stylesheet"
+      href="../css/fonts.css"
+    )
+    style 
+      include ../css/stylesheet.css
+  body(
+    class="contentGreenBG"
+  )
+    #header-wrapper
+      #header(
+        class="container"
+      )
+        #menu(
+          class="navbar-top"
+        )
+          .navBar
+            .centerNav 
+              ul
+                li
+                  a(
+                    href="/"
+                    title="Homepage"              
+                  ) Homepage
+                li(
+                  class="current_page_item"
+                )
+                  a(
+                    href="/search"
+                    title="Search"
+                  ) Search
+                li
+                  a(
+                    href="/contact"
+                    title="Contact Us"              
+                  ) Contact Us
+            if(isLoggedIn)
+            .spotifyProfile
+                img(
+                    src=spotifyProfileImage
+                    class="image-circular"
+                    id="userProfileImg"
+                    width="250rem"
+                    )
+                span.spotify-username 
+                    p #{spotifyUsername}
+        #searchForm 
+          form(
+            method="POST"
+            action="/submit-song-search"            
+          )
+            .form-group
+              label(
+                for="song" id="searchSongLabel"
+              ) Song
+              input.form-control(
+                type="text"
+                id="searchSongInputField"
+                name="song"
+                placeholder="Enter song name"
+                required
+              )
+              label(
+                for="artist" id="searchArtistLabel"
+              ) Artist
+              input.form-control(
+                type="text"
+                name="artist"
+                placeholder="Enter artist"
+                required
+              )
+              input(
+                type="submit"
+                class="btn btn-primary btn-lg"
+                id="searchSubmitBtn"
+              )
+    #copyright(
+      class="footerContent container-fluid"
+    )
+      p &copy; Lyric.io All rights reserved. | Created by 
+        a(
+          href="https://www.linkedin.com/in/leo-kodish-b83aa712b/"
+          target="_blank"
+        ) Leo Kodish | 
+        span Design by 
+        a(
+         href="http://templated.co"
+          rel="nofollow"
+          target="_blank"
+        ) TEMPLATED
+    

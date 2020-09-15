@@ -173,7 +173,7 @@ app.get("/updateSong", async function(req, res) {
 }) 
 
 app.get("/search", function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/search.html'));
+  res.render('search', {isLoggedIn, spotifyProfileImage, spotifyUsername})
 })
 
 //handle data sent from /search form
