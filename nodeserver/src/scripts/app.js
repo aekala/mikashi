@@ -188,7 +188,7 @@ app.post('/submit-song-search', function(req, res) {
 })
 
 app.get("/contact", function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/contact.html'));
+  res.render('contact', {isLoggedIn, spotifyProfileImage, spotifyUsername})
 })
 
 async function getCurrentlyPlayingSong(res) {  

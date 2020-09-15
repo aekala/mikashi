@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #333333;
+		background: #28df99;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 12pt;
 		font-weight: 400;
@@ -603,8 +603,9 @@
 	#copyright
 	{
 		overflow: hidden;
-		padding: 5em 0em;
+		padding: 3.5em 0em;
 		border-top: 1px solid rgba(255,255,255,0.08);
+		background: #333333;
 	}
 	
 	#copyright p
