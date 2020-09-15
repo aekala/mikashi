@@ -2,22 +2,7 @@ doctype html
 html
   head
     title Login
-    link(
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    ) 
-    link(
-      rel="stylesheet"
-      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
-    )
-    link(
-      rel="stylesheet"
-      href="../css/template.css"
-    )
-    link(
-      rel="stylesheet"
-      href="../css/fonts.css"
-    )
+    include templates/resources.pug
   body(
     class="contentGreenBG"
   )
@@ -47,15 +32,7 @@ html
                               title="Contact Us"
                           ) Contact Us
               if(isLoggedIn)
-                  .spotifyProfile
-                      img(
-                          src=spotifyProfileImage
-                          class="image-circular"
-                          id="userProfileImg"
-                          width="250rem"
-                          )
-                      span.spotify-username 
-                          p #{spotifyUsername}
+                  include templates/spotifyUser.pug
           #logo
             p.pageMessageLG 404 Song Not Found
             p.pageMessageSM We were not able to find your song on SongLyrics.com or Genius.com
@@ -64,17 +41,5 @@ html
               type="button"
               href="/updateSong"
             ) Try Again  
-    #copyright(
-      class="footerContent container-fluid"
-    )
-      p &copy; Lyric.io All rights reserved. | Created by 
-        a(
-          href="https://www.linkedin.com/in/leo-kodish-b83aa712b/"
-          target="_blank"
-        ) Leo Kodish | 
-        span Design by 
-        a(
-         href="http://templated.co"
-          rel="nofollow"
-          target="_blank"
-        ) TEMPLATED
+    include templates/copyright.pug
+  include templates/modal.pug

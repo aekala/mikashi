@@ -6,22 +6,7 @@ html
             content="text/html; charset=utf-8"
         )
         title Lyrics.io
-        link(
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        )
-        link(
-        rel="stylesheet"
-        href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
-        )
-        link(
-        rel="stylesheet"
-        href="../css/template.css"
-        )
-        link(
-        rel="stylesheet"
-        href="../css/fonts.css"
-        )       
+        include templates/resources.pug
     body
         #header-wrapper
             #header(
@@ -51,15 +36,8 @@ html
                                         title="Contact Us"
                                     ) Contact Us
                         if(isLoggedIn)
-                            .spotifyProfile
-                                img(
-                                    src=spotifyProfileImage
-                                    class="image-circular"
-                                    id="userProfileImg"
-                                    width="250rem"
-                                    )
-                                span.spotify-username 
-                                    p #{spotifyUsername}
+                            include templates/spotifyUser.pug
+                            include templates/modal.pug
             #logo   
                 h1.titleText Lyric.io
                 span Automated lyric search for Spotify
@@ -115,9 +93,4 @@ html
                         ) 
                             span Email
         #copyright
-            p &copy; Lyric.io. All rights reserved. | Created by <a href="https://www.linkedin.com/in/leo-kodish-b83aa712b/" target="_blank">Leo Kodish</a> | Design by <a href="http://templated.co" rel="nofollow" target="_blank">TEMPLATED
-    
-            
-                    
-                
-
+            p &copy; Lyric.io. All rights reserved. | Created by <a href="https://www.linkedin.com/in/leo-kodish-b83aa712b/" target="_blank">Leo Kodish</a> | Design by <a href="http://templated.co" rel="nofollow" target="_blank">TEMPLATED                        

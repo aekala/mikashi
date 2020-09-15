@@ -1,0 +1,12 @@
+.spotifyProfile
+    img(
+        src=spotifyProfileImage
+        class="image-circular"
+        id="userProfileImg"
+        width="250rem"
+        )
+    span.spotify-username 
+        a(
+            data-toggle="modal"
+            data-target="#exampleModal"
+        ) #{spotifyUsername}

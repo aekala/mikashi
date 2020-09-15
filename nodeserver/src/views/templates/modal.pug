@@ -1,0 +1,30 @@
+.modal(
+    class="fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="spotifyModalLabel"
+    aria-hidden="true"
+  )
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h4.modal-title(
+            id="spotifyModalLabel"
+          ) Lyric.io
+          button(
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          ) 
+            span(
+              aria-hidden="true"
+            ) &times;
+        .modal-body 
+          p.modal-content-text Signed in as: <strong> #{spotifyUsername} </strong>
+        .modal-footer
+          button(
+            type="button"
+            class="btn btn-primary"
+            data-dismiss="modal"
+          ) Close
