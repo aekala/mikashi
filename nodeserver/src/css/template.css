@@ -628,10 +628,11 @@
 
 	.song-copyright 
 	{
+		margin-top: 2rem;
 		min-height:100%;
 		position:relative;
 		width: 100%;
-		height: 2rem;
+		height: 1.5rem;
 	}
 	
 	#copyright p
