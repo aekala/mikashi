@@ -558,12 +558,24 @@
 		text-align: center;
 	}
 
-	.spotify-username p 
+	.spotify-username a
 	{
 		color: white;
 		display: inline-block;
 		font-size: 1rem;
 		padding: 0 1rem 0 0.5rem;
+	}
+
+	.spotify-username a:hover 
+	{
+		color: white;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.modal-content-text
+	{
+		font-size: 1rem;
 	}
 
 /*********************************************************************************/
