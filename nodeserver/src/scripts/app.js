@@ -245,8 +245,8 @@ function getSongLyrics(songData, index, source, res) {
       let renderData = {
         songName: songData.songName,
         artist: songData.artist,        
-        userProfileImg: spotifyProfileImage,
-        username: spotifyUsername
+        spotifyProfileImage,
+        spotifyUsername
       }
       if (source == "Spotify") {
         renderData.albumName = songData.albumName;
