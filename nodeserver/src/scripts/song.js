@@ -50,6 +50,7 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
         }
     }).catch(function(error) {
       try { 
+        console.log(error.response);
         if (error.response.status == 404) {  // serve the songNotFound page if the url request returns a 404 error
           if (index == (lyricSearchOrder.length - 1)) {
             if (source == "Search") {
@@ -58,7 +59,7 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
               res.render('songNotFound', spotifyUser.getSpotifyUserData());
             }
           } else {
-            getSongLyrics(songData, ++index, source, res);
+            getSongLyrics(songData, ++index, source, lyricSearchOrder, res);
           }
         }
       } catch(error) {  // if a different error is found, just serve the songNotFound page

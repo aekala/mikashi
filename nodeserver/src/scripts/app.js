@@ -154,18 +154,10 @@ app.get("/updateSong", async function(req, res) {
   getSongData(songResponse, res);
 }) 
 
-app.use('/search', search);
-
-//handle data sent from /search form
-app.post('/submit-song-search', function(req, res) {
-  const songData = {
-    songName: req.body.song, 
-    artist: req.body.artist
-  };
-  songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
-  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-  song.getSongLyrics(songData, 0, "Search", lyricSearchOrder, res)
-})
+app.use('/search', function(req, res, next) {
+  req.lyricSearchOrder = lyricSearchOrder;
+  next();
+}, search);
 
 app.get("/contact", function(req, res) {
   res.render('contact', spotifyUser.getSpotifyUserData());
