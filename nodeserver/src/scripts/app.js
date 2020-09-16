@@ -12,11 +12,10 @@ dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
-var isLoggedIn = false; // show profile pic and username depending on login status
 var access_token;
 var refresh_token;
-var spotifyUsername; 
-var spotifyProfileImage;
+
+var spotifyUser = require('../scripts/spotifyUser.js');
 
 
 const lyricSearchOrder = ["SongLyrics", "Genius"];
@@ -49,7 +48,7 @@ app.use(express.urlencoded({
 }))
 
 app.get('/', function(req, res) {
-  res.render('login', {isLoggedIn, spotifyUsername, spotifyProfileImage})
+  res.render('homepage', spotifyUser.getSpotifyUserData());
 })
 
 app.get('/login', function(req, res) {
@@ -101,7 +100,7 @@ app.get('/callback', function(req, res) {
   request(authOptions)
     .then(async function (response) {
       if (response.status === 200) {
-        isLoggedIn = true;
+        spotifyUser.setLoginStatus(true);
         access_token = response.data.access_token,
         refresh_token = response.data.refresh_token;
         
@@ -139,6 +138,9 @@ async function getUserProfile() {
       } else {
         spotifyUsername = response.data.id;
         spotifyProfileImage = response.data.images[0].url;
+
+        spotifyUser.setSpotifyUsername(spotifyUsername);
+        spotifyUser.setSpotifyProfileImage(spotifyProfileImage);
       }
     });
   }
@@ -173,7 +175,7 @@ app.get("/updateSong", async function(req, res) {
 }) 
 
 app.get("/search", function(req, res) {
-  res.render('search', {isLoggedIn, spotifyProfileImage, spotifyUsername})
+  res.render('search', spotifyUser.getSpotifyUserData());
 })
 
 //handle data sent from /search form
@@ -188,7 +190,7 @@ app.post('/submit-song-search', function(req, res) {
 })
 
 app.get("/contact", function(req, res) {
-  res.render('contact', {isLoggedIn, spotifyProfileImage, spotifyUsername})
+  res.render('contact', spotifyUser.getSpotifyUserData());
 })
 
 async function getCurrentlyPlayingSong(res) {  
@@ -202,7 +204,7 @@ async function getCurrentlyPlayingSong(res) {
   var songResponse = await request(options)
                       .then(function(response) {  
                         if (response.status == 204) { // Spotify returns a 204 status code if there is no song currently playing
-                          res.render('noSongPlaying', {isLoggedIn, spotifyProfileImage, spotifyUsername});
+                          res.render('noSongPlaying', spotifyUser.getSpotifyUserData());
                           return null
                         } else {
                           return response;   
@@ -242,11 +244,13 @@ function getSongLyrics(songData, index, source, res) {
   request(options)
     .then(function(response) {
       let $ = cheerio.load(response.data);
+      let spotifyUserData = spotifyUser.getSpotifyUserData();
       let renderData = {
         songName: songData.songName,
-        artist: songData.artist,        
-        spotifyProfileImage,
-        spotifyUsername
+        artist: songData.artist,      
+        loggedIn: spotifyUserData.isLoggedIn,  
+        spotifyProfileImage: spotifyUserData.spotifyProfileImage,
+        spotifyUsername: spotifyUserData.spotifyUsername
       }
       if (source == "Spotify") {
         renderData.albumName = songData.albumName;
@@ -263,7 +267,6 @@ function getSongLyrics(songData, index, source, res) {
           break;
       }
       if (source == "Search") {
-        renderData.isLoggedIn = isLoggedIn;
         res.render('songSearchResult', renderData)
       } else {
         res.render('song', renderData);
@@ -273,9 +276,9 @@ function getSongLyrics(songData, index, source, res) {
       if (error.response.status == 404) {  // serve the songNotFound page if the url request returns a 404 error
         if (index == (lyricSearchOrder.length - 1)) {
           if (source == "Search") {
-            res.render('songNotFoundSearch', {isLoggedIn, spotifyProfileImage, spotifyUsername})
+            res.render('songNotFoundSearch', spotifyUser.getSpotifyUserData());
           } else {
-            res.render('songNotFound', {isLoggedIn, spotifyProfileImage, spotifyUsername});
+            res.render('songNotFound', spotifyUser.getSpotifyUserData());
           }
         } else {
           getSongLyrics(songData, ++index, source, res);
