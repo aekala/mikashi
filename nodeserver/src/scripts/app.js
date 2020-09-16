@@ -5,7 +5,6 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
-var cheerio = require('cheerio');
 
 dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
@@ -14,8 +13,10 @@ var redirect_uri = process.env.REDIRECT_URI;
 var access_token;
 var refresh_token;
 
+var search = require('../routes/search.js');
 var spotifyUser = require('../scripts/spotifyUser.js');
 var spotify = require('../scripts/spotify.js');
+var song = require('../scripts/song.js');
 var utilities = require('../scripts/utilities.js');
 
 
@@ -153,9 +154,7 @@ app.get("/updateSong", async function(req, res) {
   getSongData(songResponse, res);
 }) 
 
-app.get("/search", function(req, res) {
-  res.render('search', spotifyUser.getSpotifyUserData());
-})
+app.use('/search', search);
 
 //handle data sent from /search form
 app.post('/submit-song-search', function(req, res) {
@@ -165,7 +164,7 @@ app.post('/submit-song-search', function(req, res) {
   };
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-  getSongLyrics(songData, 0, "Search", res)
+  song.getSongLyrics(songData, 0, "Search", lyricSearchOrder, res)
 })
 
 app.get("/contact", function(req, res) {
@@ -181,75 +180,7 @@ function getSongData(songResponse, res) {
   } 
   songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
   songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-  getSongLyrics(songData, 0, "Spotify", res);
-}
-
-function getSongLyrics(songData, index, source, res) {
-  let lyricsURL;
-  switch(lyricSearchOrder[index]) {
-    case 'SongLyrics':
-      lyricsURL = 'http://www.songlyrics.com/' + songData.artistParam + '/' + songData.songParam + '-lyrics/';
-      break;
-    case 'Genius':
-      lyricsURL = 'http://www.genius.com/' + songData.artistParam + '-' + songData.songParam + '-lyrics';
-      break;
-  }
-
-  var options = {
-    method: 'get',
-    url: lyricsURL
-  }
-  request(options)
-    .then(function(response) {
-      let $ = cheerio.load(response.data);
-      let spotifyUserData = spotifyUser.getSpotifyUserData();
-      let renderData = {
-        songName: songData.songName,
-        artist: songData.artist,      
-        loggedIn: spotifyUserData.isLoggedIn,  
-        spotifyProfileImage: spotifyUserData.spotifyProfileImage,
-        spotifyUsername: spotifyUserData.spotifyUsername
-      }
-      if (source == "Spotify") {
-        renderData.albumName = songData.albumName;
-        renderData.albumArtUrl = songData.albumArtUrl;
-      }
-      switch(lyricSearchOrder[index]) {
-        case 'SongLyrics':
-          var lyrics = $('#songLyricsDiv').html();
-          renderData.lyrics = lyrics        
-          break;
-        case 'Genius':
-          var lyrics = $('.lyrics').html();
-          renderData.lyrics = utilities.parseGeniusLyrics(lyrics)     
-          break;
-      }
-      if (source == "Search") {
-        res.render('songSearchResult', renderData)
-      } else {
-        res.render('song', renderData);
-      }
-  }).catch(function(error) {
-    try { 
-      if (error.response.status == 404) {  // serve the songNotFound page if the url request returns a 404 error
-        if (index == (lyricSearchOrder.length - 1)) {
-          if (source == "Search") {
-            res.render('songNotFoundSearch', spotifyUser.getSpotifyUserData());
-          } else {
-            res.render('songNotFound', spotifyUser.getSpotifyUserData());
-          }
-        } else {
-          getSongLyrics(songData, ++index, source, res);
-        }
-      }
-    } catch(error) {  // if a different error is found, just serve the songNotFound page
-      if (source == "Search") {
-        res.render('songNotFoundSearch')
-      } else {
-        res.render('songNotFound');
-      }
-    }
-  });
+  song.getSongLyrics(songData, 0, "Spotify", lyricSearchOrder, res);
 }
 
 
