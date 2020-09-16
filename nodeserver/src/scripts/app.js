@@ -6,7 +6,6 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var cheerio = require('cheerio');
-var HTMLParser = require('node-html-parser');
 
 dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
@@ -17,6 +16,7 @@ var refresh_token;
 
 var spotifyUser = require('../scripts/spotifyUser.js');
 var spotify = require('../scripts/spotify.js');
+var utilities = require('../scripts/utilities.js');
 
 
 const lyricSearchOrder = ["SongLyrics", "Genius"];
@@ -221,7 +221,7 @@ function getSongLyrics(songData, index, source, res) {
           break;
         case 'Genius':
           var lyrics = $('.lyrics').html();
-          renderData.lyrics = parseGeniusLyrics(lyrics)     
+          renderData.lyrics = utilities.parseGeniusLyrics(lyrics)     
           break;
       }
       if (source == "Search") {
@@ -252,10 +252,6 @@ function getSongLyrics(songData, index, source, res) {
   });
 }
 
-function parseGeniusLyrics(lyrics) {  // need to ignore annotations and hyperlinks when getting lyrics from Genius 
-  let root = HTMLParser.parse(lyrics);
-  return root.text.trim().replace(/\n/g, "<br />");
-}
 
 console.log('Listening on 8080');
 app.listen(8080);
