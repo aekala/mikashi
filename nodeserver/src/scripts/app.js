@@ -110,7 +110,7 @@ app.get('/callback', function(req, res) {
         
         var songResponse = await spotify.getCurrentlyPlayingSong(access_token, res);
         if (songResponse) {
-          getSongData(songResponse, res);
+          song.getSongData(songResponse, lyricSearchOrder, res);
         }
       } else {
         res.redirect('/#' +
@@ -151,7 +151,7 @@ app.get('/refresh_token', function(req, res) {
 
 app.get("/updateSong", async function(req, res) {
   var songResponse = await spotify.getCurrentlyPlayingSong(access_token, res);
-  getSongData(songResponse, res);
+  song.getSongData(songResponse, lyricSearchOrder, res);
 }) 
 
 app.use('/search', function(req, res, next) {
@@ -162,18 +162,6 @@ app.use('/search', function(req, res, next) {
 app.get("/contact", function(req, res) {
   res.render('contact', spotifyUser.getSpotifyUserData());
 })
-
-function getSongData(songResponse, res) {
-  const songData = {
-        songName: songResponse.data.item.name,
-        artist: songResponse.data.item.artists[0].name,
-        albumName: songResponse.data.item.album.name, 
-        albumArtUrl: songResponse.data.item.album.images[0].url,  
-  } 
-  songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
-  songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-  song.getSongLyrics(songData, 0, "Spotify", lyricSearchOrder, res);
-}
 
 
 console.log('Listening on 8080');

@@ -3,6 +3,18 @@ var cheerio = require('cheerio');
 var spotifyUser = require('./spotifyUser.js');
 var utilities = require('./utilities.js');
 
+function getSongData(songResponse, lyricSearchOrder, res) {
+    const songData = {
+          songName: songResponse.data.item.name,
+          artist: songResponse.data.item.artists[0].name,
+          albumName: songResponse.data.item.album.name, 
+          albumArtUrl: songResponse.data.item.album.images[0].url,  
+    } 
+    songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
+    songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
+    getSongLyrics(songData, 0, "Spotify", lyricSearchOrder, res);
+}
+
 function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
     let lyricsURL;
     switch(lyricSearchOrder[index]) {
@@ -50,7 +62,6 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
         }
     }).catch(function(error) {
       try { 
-        console.log(error.response);
         if (error.response.status == 404) {  // serve the songNotFound page if the url request returns a 404 error
           if (index == (lyricSearchOrder.length - 1)) {
             if (source == "Search") {
@@ -70,6 +81,7 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
         }
       }
     });
-  }
+}
 
-  exports.getSongLyrics = getSongLyrics;
+exports.getSongData = getSongData;
+exports.getSongLyrics = getSongLyrics;
