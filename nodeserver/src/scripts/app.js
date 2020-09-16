@@ -13,11 +13,11 @@ var redirect_uri = process.env.REDIRECT_URI;
 var access_token;
 var refresh_token;
 
+var login = require('../routes/login.js');
 var search = require('../routes/search.js');
 var spotifyUser = require('../scripts/spotifyUser.js');
 var spotify = require('../scripts/spotify.js');
 var song = require('../scripts/song.js');
-var utilities = require('../scripts/utilities.js');
 
 const lyricSearchOrder = ["SongLyrics", "Genius"];
 
@@ -46,22 +46,13 @@ app.get("/contact", function(req, res) {
   res.render('contact', spotifyUser.getSpotifyUserData());
 })
 
-app.get('/login', function(req, res) {
-  var state = utilities.generateRandomString(16);
-  res.cookie(stateKey, state);
-
-  // your application requests authorization
-  var scope = 'user-read-currently-playing';
-  res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
-      response_type: 'code',
-      client_id: client_id,
-      scope: scope,
-      redirect_uri: redirect_uri,
-      state: state
-    }));
-});
-
+app.use('/login', function(req, res, next) {
+  req.stateKey = stateKey;
+  req.client_id = client_id;
+  req.redirect_uri = redirect_uri;
+  next();
+}, login);
+  
 app.get('/callback', function(req, res) {
   // your application requests refresh and access tokens
   // after checking the state parameter
