@@ -16,6 +16,7 @@ var access_token;
 var refresh_token;
 
 var spotifyUser = require('../scripts/spotifyUser.js');
+var spotify = require('../scripts/spotify.js');
 
 
 const lyricSearchOrder = ["SongLyrics", "Genius"];
@@ -104,9 +105,9 @@ app.get('/callback', function(req, res) {
         access_token = response.data.access_token,
         refresh_token = response.data.refresh_token;
         
-        await getUserProfile();
+        await spotify.getUserProfile(access_token);
         
-        var songResponse = await getCurrentlyPlayingSong(res);
+        var songResponse = await spotify.getCurrentlyPlayingSong(access_token, res);
         if (songResponse) {
           getSongData(songResponse, res);
         }
@@ -122,28 +123,6 @@ app.get('/callback', function(req, res) {
   });
 }
 });
-
-async function getUserProfile() {
-  var options = {
-    method: 'get',
-    url: 'https://api.spotify.com/v1/me/',
-    headers: { 'Authorization': 'Bearer ' + access_token },
-    json: true
-  };
-
-  await request(options)
-    .then(function(response) {  
-      if (response.status == 403) { // Spotify returns a 403 status code if you don't have authorization to access account
-        console.error("WEEEEEEOOOOOOO WEEEEEEEOOOOO"); 
-      } else {
-        spotifyUsername = response.data.id;
-        spotifyProfileImage = response.data.images[0].url;
-
-        spotifyUser.setSpotifyUsername(spotifyUsername);
-        spotifyUser.setSpotifyProfileImage(spotifyProfileImage);
-      }
-    });
-  }
 
 app.get('/refresh_token', function(req, res) {
 
@@ -170,7 +149,7 @@ app.get('/refresh_token', function(req, res) {
 });
 
 app.get("/updateSong", async function(req, res) {
-  var songResponse = await getCurrentlyPlayingSong(res);
+  var songResponse = await spotify.getCurrentlyPlayingSong(access_token, res);
   getSongData(songResponse, res);
 }) 
 
@@ -192,27 +171,6 @@ app.post('/submit-song-search', function(req, res) {
 app.get("/contact", function(req, res) {
   res.render('contact', spotifyUser.getSpotifyUserData());
 })
-
-async function getCurrentlyPlayingSong(res) {  
-  var options = {
-    method: 'get',
-    url: 'https://api.spotify.com/v1/me/player/currently-playing',
-    headers: { 'Authorization': 'Bearer ' + access_token },
-    json: true
-  };
-
-  var songResponse = await request(options)
-                      .then(function(response) {  
-                        if (response.status == 204) { // Spotify returns a 204 status code if there is no song currently playing
-                          res.render('noSongPlaying', spotifyUser.getSpotifyUserData());
-                          return null
-                        } else {
-                          return response;   
-                        }
-                      });
-  
-  return songResponse;
-}
 
 function getSongData(songResponse, res) {
   const songData = {
