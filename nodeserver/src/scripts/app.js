@@ -19,23 +19,7 @@ var spotify = require('../scripts/spotify.js');
 var song = require('../scripts/song.js');
 var utilities = require('../scripts/utilities.js');
 
-
 const lyricSearchOrder = ["SongLyrics", "Genius"];
-
-/**
- * Generates a random string containing numbers and letters
- * @param  {number} length The length of the string
- * @return {string} The generated string
- */
-var generateRandomString = function(length) {
-  var text = '';
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-  for (var i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-};
 
 var stateKey = 'spotify_auth_state';
 
@@ -53,8 +37,17 @@ app.get('/', function(req, res) {
   res.render('homepage', spotifyUser.getSpotifyUserData());
 })
 
+app.use('/search', function(req, res, next) {
+  req.lyricSearchOrder = lyricSearchOrder;
+  next();
+}, search);
+
+app.get("/contact", function(req, res) {
+  res.render('contact', spotifyUser.getSpotifyUserData());
+})
+
 app.get('/login', function(req, res) {
-  var state = generateRandomString(16);
+  var state = utilities.generateRandomString(16);
   res.cookie(stateKey, state);
 
   // your application requests authorization
@@ -153,16 +146,6 @@ app.get("/updateSong", async function(req, res) {
   var songResponse = await spotify.getCurrentlyPlayingSong(access_token, res);
   song.getSongData(songResponse, lyricSearchOrder, res);
 }) 
-
-app.use('/search', function(req, res, next) {
-  req.lyricSearchOrder = lyricSearchOrder;
-  next();
-}, search);
-
-app.get("/contact", function(req, res) {
-  res.render('contact', spotifyUser.getSpotifyUserData());
-})
-
 
 console.log('Listening on 8080');
 app.listen(8080);
