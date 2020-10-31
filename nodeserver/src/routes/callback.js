@@ -18,8 +18,6 @@ router.get('/', function(req, res) {
   var redirect_uri = req.authData.redirect_uri;
   var lyricSearchOrder = req.lyricSearchOrder;
 
-  console.log("stateKey: " + req.authData.stateKey);
-
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
