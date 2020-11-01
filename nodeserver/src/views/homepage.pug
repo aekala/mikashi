@@ -7,6 +7,18 @@ html
         )
         title Lyrics.io
         include templates/resources.pug
+        link(
+            rel="stylesheet"
+            href="css/template.css"
+        )
+        link(
+            rel="stylesheet"
+            href="css/fonts.css"
+        )       
+        link(
+            rel="stylesheet"
+            href="css/stylesheet.css"
+        )
     body
         #header-wrapper
             #header(
@@ -27,14 +39,14 @@ html
                                     ) Homepage
                                 li
                                     a(
-                                        href="/search"
+                                        href="/prod/search"
                                         title="Search"
                                     ) Search
                                 li
                                     a(
-                                        href="/contact"
-                                        title="Contact Us"
-                                    ) Contact Us
+                                        href="/prod/contact"
+                                        title="Contact"
+                                    ) Contact
                         if(isLoggedIn)
                             include templates/spotifyUser.pug
                             include templates/modal.pug
@@ -55,12 +67,12 @@ html
                     p You can also use our song search feature to search for songs without having to log in to Spotify!  
                     if(isLoggedIn)
                         a.button(
-                            href="/login"
-                        ) Find Lyrics <img src="../assets/Spotify_Icon_CMYK_Black.png" class="spotify-logo-png">
+                            href="/prod/login"
+                        ) Find Lyrics <img src="assets/Spotify_Icon_CMYK_Black.png" class="spotify-logo-png">
                     else 
                         a.button(
-                            href="/login"
-                        ) Log in with Spotify <img src="../assets/Spotify_Icon_CMYK_Black.png" class="spotify-logo-png">
+                            href="/prod/login"
+                        ) Log in with Spotify <img src="assets/Spotify_Icon_CMYK_Black.png" class="spotify-logo-png">
         #wrapper4
             #footer(
                 class="container"

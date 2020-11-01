@@ -3,6 +3,18 @@ html
   head
     title Login
     include templates/resources.pug
+    link(
+    rel="stylesheet"
+    href="../css/template.css"
+    )
+    link(
+        rel="stylesheet"
+        href="../css/fonts.css"
+    )       
+    link(
+        rel="stylesheet"
+        href="../css/stylesheet.css"
+    )
   body(
     class="contentGreenBG"
   )
@@ -18,21 +30,21 @@ html
                   ul
                       li                      
                           a(
-                              href="/"
+                              href="../"
                               title="Homepage"
                           ) Homepage
                       li(
                           class="current_page_item"
                       )                
                           a(
-                              href="/search"
+                              href="../search"
                               title="Search"
                           ) Search
                       li
                           a(
-                              href="/contact"
-                              title="Contact Us"
-                          ) Contact Us
+                              href="../contact"
+                              title="Contact"
+                          ) Contact
               if(isLoggedIn)
                 include templates/spotifyUser.pug
           #logo
@@ -41,7 +53,7 @@ html
             a.btn(
               class="btn-primary btn-lg"
               type="button"
-              href="/search"
+              href="../search"
             ) Find A Different Song  
     include templates/copyright.pug
   include templates/modal.pug

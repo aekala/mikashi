@@ -1,19 +1,19 @@
 doctype html
 html 
   head
-    title Lyrics.io
+    title Updated Lyrics.io
     include templates/resources.pug
     link(
-    rel="stylesheet"
-    href="../css/template.css"
+        rel="stylesheet"
+        href="css/template.css"
     )
     link(
         rel="stylesheet"
-        href="../css/fonts.css"
+        href="css/fonts.css"
     )       
     link(
         rel="stylesheet"
-        href="../css/stylesheet.css"
+        href="css/stylesheet.css"
     )
   body(
     class="contentBlackBG"
@@ -29,19 +29,19 @@ html
                 ul
                     li                    
                         a(
-                            href="../"
+                            href="./"
                             title="Homepage"
                         ) Homepage
                     li
                         a(  
-                            href="../search"  
+                            href="./search"  
                             title="Search"
                         ) Search
                     li
                         a(
-                            href="../contact"
+                            href="./contact"
                             title="Contact"
-                        ) Contact
+                        ) Contact 
             include templates/spotifyUser.pug
     .container-fluid
       .row

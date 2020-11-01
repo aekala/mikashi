@@ -15,7 +15,7 @@ router.post('/submit-song-search', function(req, res) {
     };
     songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
     songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-    song.getSongLyrics(songData, 0, "Search", req.lyricSearchOrder, res);
+    song.getSongLyrics(songData, 0, "Search", req.lyricSearchOrder, false, res);
 })
 
 module.exports = router;

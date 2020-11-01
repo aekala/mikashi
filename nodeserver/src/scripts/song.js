@@ -3,7 +3,7 @@ var cheerio = require('cheerio');
 var spotifyUser = require('./spotifyUser.js');
 var utilities = require('./utilities.js');
 
-function getSongData(songResponse, lyricSearchOrder, res) {
+function getSongData(songResponse, lyricSearchOrder, isUpdate, res) {
     const songData = {
           songName: songResponse.data.item.name,
           artist: songResponse.data.item.artists[0].name,
@@ -12,10 +12,11 @@ function getSongData(songResponse, lyricSearchOrder, res) {
     } 
     songData.songParam = songData.songName.toLowerCase().trim().split(' ').join('-');
     songData.artistParam = songData.artist.toLowerCase().trim().split(' ').join('-');
-    getSongLyrics(songData, 0, "Spotify", lyricSearchOrder, res);
+
+    getSongLyrics(songData, 0, "Spotify", lyricSearchOrder, isUpdate, res);
 }
 
-function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
+function getSongLyrics(songData, index, source, lyricSearchOrder, isUpdate, res) {
     let lyricsURL;
     switch(lyricSearchOrder[index]) {
       case 'SongLyrics':
@@ -57,6 +58,8 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
         }
         if (source == "Search") {
           res.render('songSearchResult', renderData)
+        } else if (isUpdate) {
+          res.render('updatedSong', renderData);
         } else {
           res.render('song', renderData);
         }
@@ -70,7 +73,7 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, res) {
               res.render('songNotFound', spotifyUser.getSpotifyUserData());
             }
           } else {
-            getSongLyrics(songData, ++index, source, lyricSearchOrder, res);
+            getSongLyrics(songData, ++index, source, lyricSearchOrder, isUpdate, res);
           }
         }
       } catch(error) {  // if a different error is found, just serve the songNotFound page

@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 
 var tokens = require('../scripts/tokens.js');
+var utilities = require('../scripts/utilities.js');
 var login = require('../routes/login.js');
 var callback = require('../routes/callback.js');
 var search = require('../routes/search.js');
@@ -23,6 +24,10 @@ const lyricSearchOrder = ["SongLyrics", "Genius"];
 var stateKey = 'spotify_auth_state';
 
 var app = express();
+
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+app.use(awsServerlessExpressMiddleware.eventContext())
+
 app.use(cors())
 app.use(cookieParser());
 app.set('view engine', 'pug')
@@ -46,6 +51,7 @@ app.get("/contact", function(req, res) {
 })
 
 app.use('/login', function(req, res, next) {
+  utilities.setSpotifyRouteState("spotify");
   req.stateKey = stateKey;
   req.client_id = client_id;
   req.redirect_uri = redirect_uri;
@@ -60,6 +66,7 @@ app.use('/callback', function(req, res, next) {
     redirect_uri
   }
   req.lyricSearchOrder = lyricSearchOrder;
+  req.updateStatus = utilities.getSpotifyRouteState();
   next();
 }, callback)
 
@@ -89,8 +96,8 @@ app.get('/refresh_token', function(req, res) {
 
 app.get("/updateSong", async function(req, res) {
   var songResponse = await spotify.getCurrentlyPlayingSong(tokens.getTokens().access_token, res);
-  song.getSongData(songResponse, lyricSearchOrder, res);
+  utilities.setSpotifyRouteState("update");
+  song.getSongData(songResponse, lyricSearchOrder, true, res);
 }) 
 
-console.log('Listening on 8080');
-app.listen(8080);
+module.exports = app;

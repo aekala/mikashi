@@ -17,6 +17,7 @@ router.get('/', function(req, res) {
   var client_secret = req.authData.client_secret;
   var redirect_uri = req.authData.redirect_uri;
   var lyricSearchOrder = req.lyricSearchOrder;
+  var updateStatus = req.updateStatus;
 
   var code = req.query.code || null;
   var state = req.query.state || null;
@@ -55,7 +56,8 @@ router.get('/', function(req, res) {
         
         var songResponse = await spotify.getCurrentlyPlayingSong(tokens.getTokens().access_token, res);
         if (songResponse) {
-          song.getSongData(songResponse, lyricSearchOrder, res);
+          isUpdate = updateStatus === "update";
+          song.getSongData(songResponse, lyricSearchOrder, isUpdate, res);
         }
       } else {
         res.redirect('/#' +

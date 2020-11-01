@@ -17,9 +17,20 @@ var generateRandomString = function(length) {
   
 
 function parseGeniusLyrics(lyrics) {  // need to ignore annotations and hyperlinks when getting lyrics from Genius 
-    console.log("CAME FROM GENIUSSSS")
     let root = HTMLParser.parse(lyrics);
     return root.text.trim().replace(/\n/g, "<br />");
+}
+
+
+var isUpdate = "spotify";
+exports.getSpotifyRouteState = function() {
+  return {
+    spotifyRouteState
+  }
+}
+
+exports.setSpotifyRouteState = function (state) {
+  spotifyRouteState = state;
 }
 
 exports.generateRandomString = generateRandomString;

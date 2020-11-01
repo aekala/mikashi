@@ -7,6 +7,18 @@ html
         )
         title Lyrics.io
         include templates/resources.pug
+        link(
+            rel="stylesheet"
+            href="css/template.css"
+        )
+        link(
+            rel="stylesheet"
+            href="css/fonts.css"
+        )       
+        link(
+            rel="stylesheet"
+            href="css/stylesheet.css"
+        )
     body
         #header-wrapper
             #header(
@@ -20,21 +32,21 @@ html
                             ul
                                 li                        
                                     a(
-                                        href="/"
+                                        href="./"
                                         title="Homepage"
                                     ) Homepage
                                 li
                                     a(
-                                        href="/search"
+                                        href="./search"
                                         title="Search"
                                     ) Search
                                 li(
                                     class="current_page_item"
                                 )
                                     a(
-                                        href="/contact"
-                                        title="Contact Us"
-                                    ) Contact Us
+                                        href="./contact"
+                                        title="Contact"
+                                    ) Contact
                         if(isLoggedIn)
                             include templates/spotifyUser.pug
                 .jumbotron
