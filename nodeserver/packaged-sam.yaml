@@ -54,7 +54,7 @@ Resources:
   AwsServerlessExpressFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://basic-starter-bucket/81b613cf660873017d1d936181d112dd
+      CodeUri: s3://basic-starter-bucket/26a6bd8b8233ea4a4755cd501db0f88d
       Handler: lambda.handler
       MemorySize: 1024
       Role:

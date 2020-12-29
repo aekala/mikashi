@@ -4,12 +4,12 @@ html
     title Mikashi
     include templates/resources.pug
     link(
-      rel="stylesheet"
-      href="../css/template.css"
+        rel="stylesheet"
+        href="css/template.css"
     )     
     link(
         rel="stylesheet"
-        href="../css/stylesheet.css"
+        href="css/stylesheet.css"
     )
   body(
     class="contentGreenBG"
@@ -25,20 +25,20 @@ html
               .centerNav
                   ul
                       li                    
-                          a(
-                              href="../"
-                              title="Homepage"
-                          ) Homepage
+                        a(
+                            href="./"
+                            title="Homepage"
+                        ) Homepage
                       li
-                          a(
-                              href="../search"
+                          a(  
+                              href="./search"  
                               title="Search"
                           ) Search
                       li
                           a(
-                              href="../contact"
+                              href="./contact"
                               title="Contact"
-                          ) Contact
+                          ) Contact 
               if(isLoggedIn)
                   include templates/spotifyUser.pug
           #logo

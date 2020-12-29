@@ -12,7 +12,7 @@ async function getUserProfile(access_token) {
   await request(options)
     .then(function(response) {  
       if (response.status == 403) { // Spotify returns a 403 status code if you don't have authorization to access account
-        console.error("WEEEEEEOOOOOOO WEEEEEEEOOOOO"); 
+        console.error("Authorization Failed"); 
       } else {
         spotifyUsername = response.data.id;
         spotifyProfileImage = response.data.images[0].url;

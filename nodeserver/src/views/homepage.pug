@@ -5,19 +5,19 @@ html
             http-equiv="Content-Type" 
             content="text/html; charset=utf-8"
         )
-        title Lyrics.io
+        title Mikashi
         include templates/resources.pug
         link(
             rel="stylesheet"
-            href="css/template.css"
+            href="https://mikashi-css.s3.amazonaws.com/css/template.css"
         )      
         link(
             rel="stylesheet"
-            href="css/stylesheet.css"
+            href="https://mikashi-css.s3.amazonaws.com/css/stylesheet.css"
         )
         link(
             rel="stylesheet"
-            href="css/fontawesome/css/all.css"
+            href="../css/fontawesome/css/all.css"
         )
     body
         #header-wrapper
@@ -39,39 +39,41 @@ html
                                     ) Homepage
                                 li
                                     a(
-                                        href="/prod/search"
+                                        href="/search"
                                         title="Search"
                                     ) Search
                                 li
                                     a(
-                                        href="/prod/contact"
+                                        href="/contact"
                                         title="Contact"
                                     ) Contact
                         if(isLoggedIn)
                             include templates/spotifyUser.pug
                             include templates/modal.pug
             #logo   
-                h1.titleText Lyric.io
+                h1.titleText 
+                    ruby 見歌詞
+                        rt みかし
                 span Automated lyric search for Spotify
         #wrapper1
             #welcome(
                 class="container"
             )
                 .title
-                    h2 Welcome to Lyric.io
+                    h2 Welcome to Mikashi
                     span(
                         class="byline"
                     ) A Better Way to Get Song Lyrics
                 .content
-                    p Log in to <strong>Lyric.io</strong> using <strong>Spotify</strong> to automatically find lyrics to the music you're listening to. No more wasting time looking up songs, let Lyric.io do the work for you! Lyric.io is powered by Node.js, utilizes the Spotify Web API, and currently searches for lyrics from <a href="http://www.songlyrics.com/" target="_blank">SongLyrics</a> and <a href="https://genius.com/" target="_blank">Genius</a>
-                    p You can also use our song search feature to search for songs without having to log in to Spotify!  
+                    p Log in to <strong>Mikashi</strong> using <strong>Spotify</strong> to automatically find lyrics to the music you're listening to. No more wasting time looking up songs, let Mikashi do the work for you! Mikashi is powered by Node.js, utilizes the Spotify Web API, and currently searches for lyrics from <a href="http://www.songlyrics.com/" target="_blank">SongLyrics</a> and <a href="https://genius.com/" target="_blank">Genius</a>
+                    p You can also use Mikashi's song search feature to search for songs without having to log in to Spotify!  
                     if(isLoggedIn)
                         a.button(
-                            href="/prod/login"
+                            href="/login"
                         ) Find Lyrics <img src="assets/Spotify_Icon_CMYK_Black.png" class="spotify-logo-png">
                     else 
                         a.button(
-                            href="/prod/login"
+                            href="/login"
                         ) Log in with Spotify <img src="assets/Spotify_Icon_CMYK_Black.png" class="spotify-logo-png">
         #wrapper4
             #footer(
@@ -109,7 +111,7 @@ html
                             )
                     li
                         a(
-                            href="mailto:lyric.io@gmail.com"
+                            href="mailto:mikashi@gmail.com"
                             class="fa-stack fa-2x "
                             target="_blank"
                         ) 
@@ -120,4 +122,4 @@ html
                                 class="fas fa-envelope fa-stack-1x fa-inverse"
                             )
         #copyright
-            p &copy; Lyric.io. All rights reserved. | Created by <a href="https://www.linkedin.com/in/leo-kodish-b83aa712b/" target="_blank">Leo Kodish</a> | Design by <a href="http://templated.co" rel="nofollow" target="_blank">TEMPLATED                        
+            p Mikashi | Developed by <a href="https://www.linkedin.com/in/leo-kodish-b83aa712b/" target="_blank">Leo Kodish</a> 

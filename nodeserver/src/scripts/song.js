@@ -69,6 +69,8 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, isUpdate, res)
           if (index == (lyricSearchOrder.length - 1)) {
             if (source == "Search") {
               res.render('songNotFoundSearch', spotifyUser.getSpotifyUserData());
+            } else if (isUpdate) {
+              res.render('updatedSongNotFound');
             } else {
               res.render('songNotFound', spotifyUser.getSpotifyUserData());
             }
@@ -78,7 +80,9 @@ function getSongLyrics(songData, index, source, lyricSearchOrder, isUpdate, res)
         }
       } catch(error) {  // if a different error is found, just serve the songNotFound page
         if (source == "Search") {
-          res.render('songNotFoundSearch')
+          res.render('songNotFoundSearch');
+        } else if (isUpdate) {
+          res.render('updatedSongNotFound');
         } else {
           res.render('songNotFound');
         }
