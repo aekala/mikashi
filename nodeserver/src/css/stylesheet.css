@@ -96,6 +96,10 @@
 
 @media only screen and (max-device-width: 767px) {	/* breakpoint for mobile phones */
 
+  .spotifyProfile {
+    display: none;
+  }
+
   /*********************************************************************************/
   /* Search Page                                                                   */
   /*********************************************************************************/
@@ -156,9 +160,42 @@
     margin-top: 2em;
     font-size: 1.5em;
   }
+
+  /*********************************************************************************/
+  /* Song Page                                                                     */
+  /*********************************************************************************/
+  #albumArt {
+    margin-top: 2.5em;
+  }
+  
+  .song-details-text p {
+    font-size: 2em;
+  }
+
+  .songUpdateBtn {
+    padding: 0.5em 1em 0.5em 0.5em;
+    font-size: 1.25em;
+  }
+
+  p.song-details-text-album {
+    font-size: 1.5em;
+  }
+
+  .song-lyrics-header {
+    font-size: 2em;
+  }
+
+  .song-lyrics-text {
+    font-size: 1.25em;
+  }
+
 }
 
 @media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) {	/* breakpoint for tablets */
+  
+  .spotifyProfile {
+    display: none;
+  }
 
   /*********************************************************************************/
   /* Search Page                                                                   */
@@ -208,17 +245,45 @@
       font-size: 2em;
     }
 
-    /*********************************************************************************/
-    /* Song Not Found Page                                                           */
-    /*********************************************************************************/
-    .pageMessageSM {
-      font-size: 2em;
-    }
+  /*********************************************************************************/
+  /* Song Not Found Page                                                           */
+  /*********************************************************************************/
+  .pageMessageSM {
+    font-size: 2em;
+  }
 
-    .songNotFoundUpdateBtn {
-      padding: 1em;
-      margin-top: 2em;
-      font-size: 2em;
-    }
+  .songNotFoundUpdateBtn {
+    padding: 1em;
+    margin-top: 2em;
+    font-size: 2em;
+  }
+
+  /*********************************************************************************/
+  /* Song Page                                                                     */
+  /*********************************************************************************/
+  #albumArt {
+    margin-top: 2.5em;
+  }
+  
+  .song-details-text p {
+    font-size: 2em;
+  }
+
+  .songUpdateBtn {
+    padding: 0.5em 1em 0.5em 0.5em;
+    font-size: 1.25em;
+  }
+
+  p.song-details-text-album {
+    font-size: 1.5em;
+  }
+
+  .song-lyrics-header {
+    font-size: 2.25em;
+  }
+
+  .song-lyrics-text {
+    font-size: 1.5em;
+  }
   }
   
