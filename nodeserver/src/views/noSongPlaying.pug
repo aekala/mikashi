@@ -3,14 +3,6 @@ html
   head
     title Mikashi
     include templates/resources.pug
-    link(
-    rel="stylesheet"
-    href="../css/template.css"
-    )     
-    link(
-        rel="stylesheet"
-        href="../css/stylesheet.css"
-    )
   body(
     class="contentGreenBG"
   )
@@ -46,7 +38,7 @@ html
               class="pageMessageLG"
             ) You are not currently playing a song on Spotify! 
             a.btn(
-              class="btn-primary btn-lg updateBtn"
+              class="btn-primary btn-lg updateBtn noSongPlayingUpdateBtn"
               type="button"
               href="/updateSong"
             ) Try Again  

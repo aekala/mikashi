@@ -76,6 +76,10 @@
   text-align: left;
 }
 
+#searchForm {
+  padding: 0em 32em;
+}
+
 .fa-stack {
   font-size: 70px;
   margin: 35px;
@@ -85,4 +89,110 @@
   color: #0D090B;
 }
 
-/*# sourceMappingURL=stylesheet.css.map */
+.contact-content {
+  margin: 1em 3em 0em;
+  font-size: 5em;
+}
+
+@media only screen and (max-device-width: 767px) {	/* breakpoint for mobile phones */
+
+  /*********************************************************************************/
+  /* Search Page                                                                   */
+  /*********************************************************************************/
+  
+  #searchForm {
+    padding: 1em 8em;
+  }
+
+  #searchForm input[type=text] {
+      padding: 3em;
+  }
+
+  #searchForm input[type=submit] {
+    padding: 1em 3em 1em 3em;
+    margin-top: 2em;
+  }
+
+  #searchForm label {
+    font-size: 3em;
+  }
+
+  #searchForm ::placeholder {
+    font-size: 1.5em;
+  }
+
+  /*********************************************************************************/
+  /* Contact Page                                                                  */
+  /*********************************************************************************/
+
+  .contact-content {
+    margin: 1em 3em 0em;
+    font-size: 2em;
+  }
+
+  /*********************************************************************************/
+  /* Song Not Playing Page                                                         */
+  /*********************************************************************************/
+
+  .pageMessageLG {
+    font-size: 3.5em;
+  }
+
+  .noSongPlayingUpdateBtn {
+    padding: 1em 3em 1em 3em;
+    margin-top: 2em;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) {	/* breakpoint for tablets */
+
+  /*********************************************************************************/
+  /* Search Page                                                                   */
+  /*********************************************************************************/
+  
+    #searchForm {
+      padding: 1em 8em;
+    }
+  
+    #searchForm input[type=text] {
+        padding: 2em;
+    }
+  
+    #searchForm input[type=submit] {
+      padding: 1em;
+      margin-top: 2em;
+    }
+  
+    #searchForm label {
+      font-size: 2em;
+    }
+
+    #searchForm ::placeholder {
+      font-size: 1.5em;
+    }
+
+  /*********************************************************************************/
+  /* Contact Page                                                                  */
+  /*********************************************************************************/
+
+    .contact-content {
+      margin: 1em 3em 0em;
+      font-size: 2em;
+    }
+
+  /*********************************************************************************/
+  /* Song Not Playing Page                                                         */
+  /*********************************************************************************/
+
+    .pageMessageLG {
+      font-size: 3.5em;
+    }
+    
+    .noSongPlayingUpdateBtn {
+      padding: 1em;
+      margin-top: 2em;
+      font-size: 2em;
+    }
+  }
+  

@@ -7,18 +7,10 @@ html
         )
         title Mikashi
         include templates/resources.pug
-        link(
-            rel="stylesheet"
-            href="css/template.css"
-        )      
-        link(
-            rel="stylesheet"
-            href="css/stylesheet.css"
-        )
     body
         #header-wrapper
             #header(
-                class="container"
+                class="container-fluid"
             )
                 #menu(
                     class="navbar-top"
@@ -45,7 +37,9 @@ html
                                     ) Contact
                         if(isLoggedIn)
                             include templates/spotifyUser.pug
-                .jumbotron
+                .jumbotron(
+                    class="contact-content"
+                )
                     .container
                         h1.display-4 Contact
                         hr.my-4

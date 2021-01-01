@@ -11,10 +11,7 @@
     "accountId": "681209559389"
   },
   "scripts": {
-    "build": "sass ./src/css/stylesheet.scss ./src/css/stylesheet.css",
-    "dev": "npm run build && nodemon ./src/scripts/app.js",
     "start": "node --inspect=0.0.0.0:9229 ./src/scripts/app.js",
-    "start:client": "npm run build && npm run start",
     "config": "node ./scripts/configure.js",
     "deconfig": "node ./scripts/deconfigure.js",
     "local": "node scripts/local",
