@@ -52,6 +52,7 @@
   padding-left: 3rem;
   padding-right: 3rem;
   padding-top: 1rem;
+  min-height: 100vh;
 }
 
 .song-lyrics-sidebar {
