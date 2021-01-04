@@ -44,7 +44,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#privacy">Privacy</a></li>
-    <li><a href="#songNotFound">Why Did I Get a 404 Song Not Found?</a></li>
+    <li><a href="#whydidigeta404songnotfound">Why Did I Get a 404 Song Not Found?</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -93,7 +93,7 @@ Mikashi does not store or save any user data. When you log in with Spotify, Mika
 
 *For more information: [Spotify Docs](https://developer.spotify.com/documentation/general/guides/authorization-guide/)*
 
-<!-- SongNotFound -->
+<!-- Why Did I Get a 404 Song Not Found? -->
 ## Why Did I Get a 404 Song Not Found?
 There are multiple reasons why a song may not be able to be found using Mikashi. In order to get song lyrics, the app needs to construct a URL to fetch the song lyrics from a  website like SongLyrics or Genius. For example, if the user were listening to “Memories” by Leonard Cohen and was trying to get the lyrics from Genius, then the app would need to construct the URL [https://genius.com/Leonard-cohen-memories-lyrics](https://genius.com/Leonard-cohen-memories-lyrics). If the constructed URL differed from this, then the URL would be incorrect and the response back from Genius would not contain the lyrics, resulting in Mikashi not being able to present lyrics back to the user. For most songs, the URL is able to be constructed easily since the URL just requires having the song name and artist, but there are several cases in which the data returned from the Spotify Web API makes it difficult or impossible to accurately construct the correct URL. 
 
