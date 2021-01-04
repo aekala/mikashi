@@ -44,7 +44,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#privacy">Privacy</a></li>
-    <li><a href="#why-did-i-get-a-404-song-not-found?">Why Did I Get a 404 Song Not Found?</a></li>
+    <li><a href="#why-did-i-get-a-404-song-not-found">Why Did I Get a 404 Song Not Found?</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
