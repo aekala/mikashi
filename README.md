@@ -138,7 +138,7 @@ Project Link: [https://github.com/leokodish/mikashi](https://github.com/leokodis
 [issues-shield]: https://img.shields.io/github/issues/leokodish/mikashi?style=for-the-badge
 [issues-url]: https://github.com/leokodish/mikashi/issues
 [license-shield]: https://img.shields.io/github/license/leokodish/mikashi?style=for-the-badge
-[license-url]: https://github.com/leokodish/mikashi/blob/master/LICENSE
+[license-url]: https://github.com/leokodish/mikashi/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/leokodish
 [product-screenshot]: nodeserver/src/assets/Mikashi_Screenshot.png
