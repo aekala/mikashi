@@ -2,7 +2,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -129,7 +129,7 @@ Leo Kodish - [@website](https://leokodish.com) - mikashi.app@gmail.com
 Project Link: [https://github.com/leokodish/mikashi](https://github.com/leokodish/mikashi)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/leokodish/mikashi.svg?style=for-the-badge
 [contributors-url]: https://github.com/leokodish/mikashi/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/leokodish/mikashi.svg?style=for-the-badge
 [forks-url]: https://github.com/leokodish/mikashi/network/members
