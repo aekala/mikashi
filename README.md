@@ -44,7 +44,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#privacy">Privacy</a></li>
-    <li<a href="#songNotFound">Why Did I Get a 404 Song Not Found?</a></li>
+    <li><a href="#songNotFound">Why Did I Get a 404 Song Not Found?</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -112,6 +112,7 @@ Mikashi was developed for the cloud and is hosted on AWS. It is built with a ser
 The domain Mikashi.net is registered with Route 53. This combined with API Gateway allowed me to set a custom domain name for the app, so users can access the app through Mikashi.net rather than the verbose and unattractive URL that AWS auto-generates. 
 
 **Mikashi Cloud Architecture**
+
 [![Mikashi Cloud Architecture][aws-flow-diagram]](https://developer.spotify.com/documentation/general/guides/authorization-guide/) 
 
 <!-- LICENSE -->
@@ -124,7 +125,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Leo Kodish - [@website](https://www.leokodish.com) - mikashi.app@gmail.com
+Leo Kodish - [@website](https://leokodish.com) - mikashi.app@gmail.com
 
 Project Link: [https://github.com/leokodish/mikashi](https://github.com/leokodish/mikashi)
 
