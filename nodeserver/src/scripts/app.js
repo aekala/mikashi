@@ -1,8 +1,7 @@
-var express = require('express'); // Express web server framework
+var express = require('express'); 
 var request = require('axios');
 var path = require('path');
 var cors = require('cors');
-var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 
