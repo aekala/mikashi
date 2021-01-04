@@ -91,10 +91,10 @@ Mikashi does not store or save any user data. When you log in with Spotify, Mika
 **Authentication Flow:**
 [![Spotify Authorization Flow][spotify-auth-diagram]](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
 
-For more information: [Spotify Docs](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
+*For more information: [Spotify Docs](https://developer.spotify.com/documentation/general/guides/authorization-guide/)*
 
-<!-- Why Did I Get a 404 Song Not Found -->
-## SongNotFound
+<!-- SongNotFound -->
+## Why Did I Get a 404 Song Not Found?
 There are multiple reasons why a song may not be able to be found using Mikashi. In order to get song lyrics, the app needs to construct a URL to fetch the song lyrics from a  website like SongLyrics or Genius. For example, if the user were listening to “Memories” by Leonard Cohen and was trying to get the lyrics from Genius, then the app would need to construct the URL [https://genius.com/Leonard-cohen-memories-lyrics](https://genius.com/Leonard-cohen-memories-lyrics). If the constructed URL differed from this, then the URL would be incorrect and the response back from Genius would not contain the lyrics, resulting in Mikashi not being able to present lyrics back to the user. For most songs, the URL is able to be constructed easily since the URL just requires having the song name and artist, but there are several cases in which the data returned from the Spotify Web API makes it difficult or impossible to accurately construct the correct URL. 
 
 One such case is when the user’s currently playing song features multiple artists. If the Spotify Web API returns an artist response object with multiple artists in it, I simply grab the first artist in the list and use that to construct the URL. The difficulty comes when Spotify doesn’t list all of the artists in the artist response object, but instead lists the featured artists directly in the song title (e.g. “Slippery (feat. Gucci Mane)”). Since I directly use the song name returned from Spotify to construct the URL without any string manipulation besides adding hyphens between whitespace, if there is extra text in the song name such as a features list or a note saying the song is a remastered version, it is almost certain that the constructed URL will be incorrect and the song will not be able to be fetched.
