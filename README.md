@@ -58,7 +58,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://www.mikashi.net)
 
-Mikashi came about as a project centered around the Spotify Web API. I had been exploring uses for analyzing user data pertaining to liked songs and playlists, but it wasn’t until I saw that Spotify had created an API for the Spotify Player that I came up with this. This new API combined with my complete inability to hear song lyrics when I listen to songs on Spotify gave me the idea for a web app for automated lyric searching while I listened to music on Spotify.
+Mikashi came about as a project centered around the Spotify Web API. I had been exploring uses for analyzing user data pertaining to liked songs and playlists, but it wasn’t until I saw that Spotify had created an API for the Spotify Player that I came up with this. This new API combined with my complete inability to hear song lyrics when I listened to songs on Spotify gave me the idea for a web app for automated lyric searching.
 
 The name Mikashi comes from combining the kanji 見 ("see"), and the word 歌詞 ("lyrics"). 
 
