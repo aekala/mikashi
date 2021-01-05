@@ -76,9 +76,7 @@ Mikashi also allows users who don’t have Spotify accounts or users who just wa
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
+To use Mikashi, simply play music through Spotify (this can be on any of your devices, not just the one you have Mikashi open on), and then click the button on Mikashi to log in with your Spotify. You will be prompted to log in to your Spotify account to give Mikashi permission to access your music library. Once you have logged in, if your currently playing song is able to have its lyrics fetched, Mikashi will present the lyrics to you. When you want to change songs, all you have to do is press the "Update Song" button on the lyrics page and Mikashi will find the lyrics to your current songs and update the page. 
 
 <!-- Privacy -->
 ## Privacy
