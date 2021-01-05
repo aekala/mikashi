@@ -10,8 +10,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="nodeserver/src/assets/Mikashi_Large.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/leokodish/mikashi">
+    <img src="nodeserver/src/assets/Mikashi_Large.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Mikashi</h3>
@@ -77,6 +77,10 @@ Mikashi also allows users who don’t have Spotify accounts or users who just wa
 <!-- USAGE EXAMPLES -->
 ## Usage
 To use Mikashi, simply play music through Spotify (this can be on any of your devices, not just the one you have Mikashi open on), and then click the button on Mikashi to log in with your Spotify. You will be prompted to log in to your Spotify account to give Mikashi permission to access your music library. Once you have logged in, if your currently playing song is able to have its lyrics fetched, Mikashi will present the lyrics to you. When you want to change songs, all you have to do is press the "Update Song" button on the lyrics page and Mikashi will find the lyrics to your current songs and update the page. 
+
+**Mikashi Demo:**
+
+![Mikashi Demo](nodeserver/src/assets/demo.gif)
 
 <!-- Privacy -->
 ## Privacy
