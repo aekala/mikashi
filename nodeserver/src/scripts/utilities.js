@@ -22,7 +22,6 @@ function parseGeniusLyrics(lyrics) {  // need to ignore annotations and hyperlin
 }
 
 
-var isUpdate = "spotify";
 exports.getSpotifyRouteState = function() {
   return {
     spotifyRouteState

@@ -18,8 +18,15 @@ dotenv.config({path: '.env'});
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 var redirect_uri = process.env.REDIRECT_URI;
-const lyricSearchOrder = ["SongLyrics", "Genius"];
-
+const lyricSearchOrder = ["SongLyrics-full", 
+                          "SongLyrics-feat-filter", 
+                          "SongLyrics-parenthesis-filter", 
+                          "SongLyrics-dash-filter",
+                          "Genius-full",
+                          "Genius-feat-filter", 
+                          "Genius-parenthesis-filter",
+                          "Genius-dash-filter"
+                         ];
 var stateKey = 'spotify_auth_state';
 
 var app = express();
